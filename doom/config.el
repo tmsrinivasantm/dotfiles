@@ -3,8 +3,8 @@
 (setq doom-theme 'catppuccin)
 (setq display-line-numbers-type t)
 (setq org-directory "~/org/")
-(setq doom-font (font-spec :family "JetBrains Mono Nerd Font" :size 13)
-      doom-symbol-font (font-spec :family "JetBrains Mono Nerd Font"))
+(setq doom-font (font-spec :family "JetBrains Mono" :size 13)
+      doom-symbol-font (font-spec :family "JetBrains Mono"))
  ;; (setq select-enable-clipboard nil)
 ;; (setq default-frame-alist '((font . "JetBrains Mono Nerd Font 10")))
 (setq shell-file-name "/bin/zsh")
@@ -32,5 +32,5 @@
 
 ;; ################################################################################# End ############################################################################################
 
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
+(add-to-list 'default-frame-alist '(fullscreen . fullboth))
 (scroll-bar-mode -1)
