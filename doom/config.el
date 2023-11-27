@@ -2,7 +2,6 @@
 
 (setq doom-theme 'catppuccin)
 (setq catppuccin-flavor 'frappe) ;; or 'latte, 'macchiato, or 'mocha
-(catppuccin-reload)
 (setq display-line-numbers-type t)
 (setq org-directory "~/org/")
 (setq doom-font (font-spec :family "JetBrains Mono NF" :size 13)
