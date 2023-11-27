@@ -2,8 +2,8 @@ enable_audio_bell no
 include color.ini
 enabled_layouts splits
 background_opacity 0.8
-font_family      JetBrains Mono
-font_size 9.3
+font_family      MesloLGS NF
+font_size 9.5
 hide_window_decorations yes
 
 disable_ligatures never
@@ -13,8 +13,19 @@ allow_remote_control yes
 url_style curly
 
 shell zsh
+map alt+return launch --location=vsplit
+map alt+space launch --location=hsplit
+map alt+h neighboring_window left
+map alt+j neighboring_window down
+map alt+k neighboring_window up
+map alt+l neighboring_window right
+map alt+t neighboring_window right
+# map ctrl+alt+h move_window left
+# map ctrl+alt+j move_window down
+# map ctrl+alt+k move_window up
+# map ctrl+alt+l move_window right
 
 # BEGIN_KITTY_THEME
-# Catppuccin-Mocha
+# Catppuccin-Macchiato
 include current-theme.conf
 # END_KITTY_THEME
