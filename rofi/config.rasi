@@ -34,7 +34,7 @@ mainbox {
     orientation:                 horizontal;
     children:                    [  "inputbar" , "listbox" ];
     background-color:            transparent;
-	background-image:            url("~/Pictures/wallpapers/Catppuccin-Latte/jormungandr.jpg", height);
+	background-image:            url("~/Pictures/wallpapers/Catppuccin-Latte/flying_out.png", height);
 }
 
 
