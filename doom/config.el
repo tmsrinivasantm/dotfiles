@@ -29,7 +29,7 @@
  (define-key evil-normal-state-map (kbd "C-l") 'evil-ex-nohighlight)
  (define-key evil-insert-state-map (kbd "C-S-SPC") '+term/toggle)
  (define-key evil-normal-state-map (kbd "C-S-SPC") '+term/toggle)
- (define-key evil-normal-state-map (kbd "M-n") '+workspace/other)
+ (define-key evil-normal-state-map (kbd "<C-tab>") '+workspace/other)
 
 ;; ################################################################################# End ############################################################################################
 
