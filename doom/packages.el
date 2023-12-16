@@ -50,5 +50,4 @@
 ;(unpin! t)
 (package! catppuccin-theme)
 (package! evil-snipe :disable t)
-(package! vterm :disable t)
 (package! better-jumper :disable t)

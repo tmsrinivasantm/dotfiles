@@ -22,16 +22,29 @@
 (remove-hook 'text-mode-hook #'visual-line-mode)
 
 ;; ################################################################################# KeyBinds #######################################################################################
-;;
- (define-key evil-insert-state-map (kbd "C-V") 'clipboard-yank)
- (define-key evil-normal-state-map (kbd "s") 'evil-substitute)
- (define-key evil-normal-state-map (kbd "C-/") 'comment-line)
- (define-key evil-normal-state-map (kbd "C-l") 'evil-ex-nohighlight)
- (define-key evil-insert-state-map (kbd "C-S-SPC") '+term/toggle)
- (define-key evil-normal-state-map (kbd "C-S-SPC") '+term/toggle)
- (define-key evil-normal-state-map (kbd "<C-tab>") '+workspace/other)
+ ;; (define-key evil-insert-state-map (kbd "C-V") 'clipboard-yank)
+ ;; (define-key evil-normal-state-map (kbd "s") 'evil-substitute)
+ ;; (define-key evil-normal-state-map (kbd "C-/") 'comment-line)
+ ;; (define-key evil-normal-state-map (kbd "C-l") 'evil-ex-nohighlight)
+ ;; (define-key evil-insert-state-map (kbd "C-S-SPC") '+term/toggle)
+ ;; (define-key evil-normal-state-map (kbd "C-S-SPC") '+term/toggle)
+ ;; (define-key evil-normal-state-map (kbd "<C-tab>") '+workspace/other)
+ (map! "M-1" #'+workspace/switch-to-0)
+ (map! "M-2" #'+workspace/switch-to-1)
+ (map! "M-3" #'+workspace/switch-to-2)
+ (map! "M-4" #'+workspace/switch-to-3)
+ (map! "M-5" #'+workspace/switch-to-4)
+ (map! "M-6" #'+workspace/switch-to-5)
+ (map! "M-7" #'+workspace/switch-to-6)
+ (map! "M-8" #'+workspace/switch-to-7)
+ (map! "M-9" #'+workspace/switch-to-8)
 
-;; ################################################################################# End ############################################################################################
+(map! "M-0" #'+workspace/switch-to-9)
+ (map! "C-c C-SPC" #'projectile-find-file)
+ (map! "C-," #'beginning-of-buffer)
+ (map! "C-." #'end-of-buffer)
+ (map! "C-x C-o" #'other-window)
+ (map! "M-SPC" #'rectangle-mark-mode)
 
-(add-to-list 'default-frame-alist '(fullscreen . fullboth))
+;; ################################################################################# end ############################################################################################
 (scroll-bar-mode -1)
