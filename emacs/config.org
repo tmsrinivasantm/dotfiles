@@ -1,0 +1,232 @@
+#+TITLE Emacs Config
+#+AUTHOR Srinivasan
+#+DESCRIPTION: Personal Emacs config
+* Package Management && Package Install
+** Initialize Package manager
+*** Straight.el
+#+BEGIN_SRC emacs-lisp
+(defvar bootstrap-version)
+(let ((bootstrap-file
+      (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+        "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+        'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))  
+#+END_SRC
+*** Melpa
+#+BEGIN_SRC emacs-lisp
+  (require 'package)
+  (add-to-list 'package-archives
+      '("melpa"."https://melpa.org/packages/"))
+  (package-initialize)
+#+END_SRC
+*** Use Package
+#+BEGIN_SRC emacs-lisp
+  (straight-use-package 'use-package)
+  (use-package straight
+    :custom
+    (straight-use-package-by-default t))
+#+END_SRC
+** Use General.el for keybinds
+#+BEGIN_SRC emacs-lisp
+  (use-package general)
+#+END_SRC
+** Catppuccin Theme
+#+BEGIN_SRC emacs-lisp
+  (use-package catppuccin-theme)
+#+END_SRC
+** Vertico + savehist + orderless + consult
+#+BEGIN_SRC emacs-lisp
+  (use-package vertico)
+  (vertico-mode 1)
+  (use-package savehist)
+  (savehist-mode 1)
+  (use-package orderless
+    :custom
+    (completion-styles '(orderless basic))
+    (completion-category-overrides '((file (styles basic partial-completion)))))
+  (use-package consult)
+#+END_SRC
+** Popwin
+#+BEGIN_SRC emacs-lisp
+  (use-package popwin)
+  (popwin-mode 1)
+#+END_SRC
+** All icons
+#+BEGIN_SRC emacs-lisp
+  (use-package all-the-icons)
+#+END_SRC
+** Doom Modeline
+#+BEGIN_SRC emacs-lisp
+  (use-package doom-modeline)
+  (doom-modeline-mode 1)
+#+END_SRC
+** Which Key
+#+BEGIN_SRC emacs-lisp
+    (use-package which-key
+    :init
+    (setq which-key-side-window-location 'bottom
+	  which-key-sort-order #'which-key-key-order-alpha
+	  which-key-sort-uppercase-first nil
+	  which-key-add-column-padding 1
+	  which-key-max-display-columns nil
+	  which-key-min-display-lines 6
+	  which-key-side-window-slot -10
+	  which-key-side-window-max-height 0.25
+	  which-key-idle-delay 0.8
+	  which-key-max-description-length 25
+	  which-key-allow-imprecise-window-fit t
+	  which-key-separator " → " ))
+  (which-key-mode)
+#+END_SRC
+** Company
+#+BEGIN_SRC emacs-lisp
+  (use-package company-lsp
+    :commands company-lsp
+    :config
+    (push 'company-lsp company-backends))
+#+END_SRC
+** LSP Mode
+#+BEGIN_SRC emacs-lisp
+  (use-package lsp-mode
+    :init
+    (setq lsp-keymap-prefix "C-c l")
+    :hook
+    (lsp-mode . lsp-enable-which-key-integration)
+    (lsp-mode . yas-minor-mode)
+    (c++-mode . lsp-deferred)
+    (c-mode . lsp-deferred)
+    :commands lsp)
+#+END_SRC
+** Yas snippets
+#+BEGIN_SRC emacs-lisp
+  (use-package yasnippet)
+#+END_SRC
+** Magit
+#+BEGIN_SRC emacs-lisp
+  (use-package magit)
+  (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
+#+END_SRC
+** Projectile
+#+BEGIN_SRC emacs-lisp
+  (use-package projectile
+    :init
+    (projectile-mode))
+  ;; (define-key projectile-mode-map (kbd "C-c p") 'projectile-commmand-map)
+#+END_SRC
+** Workspaces
+#+BEGIN_SRC emacs-lisp
+  (use-package perspective
+    :init (persp-mode)
+    :custom
+    (persp-mode-prefix-key (kbd "C-c w"))
+    )
+  (add-hook 'projectile-before-after-project-hook #'(lambda ()
+						      (persp-rename projectile-project-root)))
+
+#+END_SRC
+** Multiple Cursors
+#+BEGIN_SRC emacs-lisp
+  (use-package multiple-cursors)
+#+END_SRC
+* UI Setup
+** Inhibit Startup Screen
+#+BEGIN_SRC emacs-lisp
+  (setq inhibit-startup-message t)
+#+END_SRC
+** Disable scrollbar and things
+#+BEGIN_SRC emacs-lisp
+  (scroll-bar-mode -1)
+  (tool-bar-mode -1)
+  (tooltip-mode -1)
+  (set-fringe-mode 10)
+  (menu-bar-mode -1)
+  (setq visual-bell t)
+#+END_SRC
+** Fonts
+#+BEGIN_SRC emacs-lisp
+  (set-face-attribute 'default nil
+    :font "JetBrains Mono Nerd Font"
+    :height 100
+    :weight 'medium)
+  (set-face-attribute 'variable-pitch nil
+    :font "JetBrains Mono Nerd Font"
+    :height 100
+    :weight 'medium)
+  (set-face-attribute 'fixed-pitch nil
+    :font "JetBrains Mono Nerd Font"
+    :height 100
+    :weight 'medium)
+  (set-face-attribute 'font-lock-comment-face nil
+    :slant 'italic)
+  (setq default-frame-alist '((font . "JetBrains Mono Nerd Font 10")))
+  (setq global-prettify-symbols-mode t)
+
+#+END_SRC
+** Theme
+#+BEGIN_SRC emacs-lisp
+  (load-theme 'catppuccin :no-confirm)
+  (setq catppuccin-flavor 'frappe)
+  (catppuccin-reload)
+#+END_SRC
+** Turn on cursor line
+#+BEGIN_SRC emacs-lisp
+  (global-hl-line-mode 1)
+#+END_SRC
+** Line numbers
+#+BEGIN_SRC emacs-lisp
+  (global-display-line-numbers-mode 1)
+#+END_SRC
+** Scrollbar off
+#+BEGIN_SRC emacs-lisp
+  (scroll-bar-mode -1)
+#+END_SRC
+
+* Keybinds
+** Load configuration
+#+BEGIN_SRC emacs-lisp
+  (define-key global-map (kbd "C-h r") nil)
+  (general-define-key
+   :prefix "C-h r"
+   "r" '((lambda () (interactive) (load-file "~/.config/emacs/init.el")) :which-key "Reload emacs config"))
+#+END_SRC
+** Global defs
+#+BEGIN_SRC emacs-lisp
+  (general-define-key "C-c C-SPC" '(projectile-find-file :which-key "Projectile-find-file"))
+  (general-define-key "C-," '(beginning-of-buffer :which-key "Jump To Beginning of buffer"))
+  (general-define-key "C-." '(end-of-buffer :which-key "Jump to end of buffer"))
+  (general-define-key "C-'" '(consult-imenu :which-key "Jump to function"))
+  (general-define-key "C-x c" '(mc/edit-lines :which-key "Multiple cursor in region"))q
+#+END_SRC
+** File actions
+#+BEGIN_SRC emacs-lisp
+  (general-define-key
+   :prefix "C-c f"
+   "s" '(consult-line :which-key "File Search")
+   "d" '(delete-file :which-key "File Delete")
+   "K" '(rename-file :which-key "File rename")
+   )
+#+END_SRC
+** Projectile
+#+BEGIN_SRC emacs-lisp
+  (general-define-key
+   :prefix "C-c p"
+   "p" '(projectile-switch-project :which-key "Projectile Switch Project")
+   "f" '(projectile-find-file :which-key "Projectile Find File")
+   "s" '(consult-ripgrep :which-key "Projectile Search Project")
+   )
+#+END_SRC 
+** Magit
+#+BEGIN_SRC emacs-lisp
+  (general-define-key
+   :prefix "C-c g"
+   "g" '(magit-status :which-key "Magit Status")
+   "B" '(magit-blame-echo :which-key "Magit Blame")
+   "b" '(magit-branch-checkout :which-key "Magit Checkout")
+   )
+#+END_SRC
