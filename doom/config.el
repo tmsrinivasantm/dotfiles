@@ -25,6 +25,7 @@
  (define-key evil-insert-state-map (kbd "C-V") 'clipboard-yank)
  (define-key evil-normal-state-map (kbd "s") 'evil-substitute)
  (define-key evil-normal-state-map (kbd "/") 'consult-line)
+ (define-key evil-normal-state-map (kbd "C-'") 'consult-imenu)
 ;;  (map! "M-1" #'+workspace/switch-to-0)
 ;;  (map! "M-2" #'+workspace/switch-to-1)
 ;;  (map! "M-3" #'+workspace/switch-to-2)
