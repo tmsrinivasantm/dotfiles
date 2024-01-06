@@ -1,5 +1,4 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim" if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
 		"clone",
@@ -18,9 +17,9 @@ require("lazy").setup({
 	{
 		'nvim-treesitter/nvim-treesitter'
 	},
-	-- {
-	-- 	'tpope/vim-fugitive'
-	-- },
+	{
+		'tpope/vim-fugitive'
+	},
 	{
 		'neovim/nvim-lspconfig',
 		dependencies = {
@@ -53,10 +52,13 @@ require("lazy").setup({
     dependencies = { 'nvim-tree/nvim-web-devicons' }
   },
   {
-     "kdheepak/lazygit.nvim",
-     -- optional for floating window border decoration
-     dependencies = {
-         "nvim-lua/plenary.nvim",
-     },
+    'lewis6991/gitsigns.nvim'
   },
+  -- {
+  --    "kdheepak/lazygit.nvim",
+  --    -- optional for floating window border decoration
+  --    dependencies = {
+  --        "nvim-lua/plenary.nvim",
+  --    },
+  -- },
 })

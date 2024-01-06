@@ -22,7 +22,8 @@ vim.keymap.set('n', '<leader>fh', string.format("<cmd>lua require'telescope.buil
 vim.keymap.set('n', '<leader> ', builtin.git_files, {})
 
 -- Git
-vim.keymap.set('n', '<leader>gg', vim.cmd.LazyGit)
+vim.keymap.set('n', '<leader>gg', vim.cmd.Git)
+vim.keymap.set('n', '<leader>gg', vim.cmd.Git)
 
 -- vSplit
 vim.keymap.set('n', '<leader>wv', vim.cmd.vsplit)
@@ -72,8 +73,12 @@ local function scratchBuffer ()
   vim.cmd("setlocal buftype=nofile")
   vim.cmd("setlocal bufhidden=hide")
   vim.cmd("setlocal noswapfile")
+  vim.cmd("set nonu")
 end
 vim.keymap.set('n', '<Leader>x', scratchBuffer)
 
 -- delete current file
-vim.keymap.set('n', '<Leader>fD', ":!rm %<CR>")
+vim.keymap.set('n', '<Leader>fD', ":!rm %")
+
+--  Select buffer
+vim.keymap.set('n', '<C-x><C-p>', "ggVG")

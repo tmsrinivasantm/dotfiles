@@ -5,6 +5,11 @@ background_opacity 0.8
 font_family      MesloLGS NF
 font_size 9.5
 hide_window_decorations yes
+cursor_shape block
+shell_integration no-cursor
+remember_window_size  no
+initial_window_width  1830
+initial_window_height 990
 
 disable_ligatures never
 allow_remote_control yes
@@ -19,13 +24,13 @@ map alt+h neighboring_window left
 map alt+j neighboring_window down
 map alt+k neighboring_window up
 map alt+l neighboring_window right
-map alt+t neighboring_window right
+# map alt+t neighboring_window right
 # map ctrl+alt+h move_window left
 # map ctrl+alt+j move_window down
 # map ctrl+alt+k move_window up
 # map ctrl+alt+l move_window right
 
 # BEGIN_KITTY_THEME
-# Catppuccin-Macchiato
+# Catppuccin-Frappe
 include current-theme.conf
 # END_KITTY_THEME
