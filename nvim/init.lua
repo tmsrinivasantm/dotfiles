@@ -6,16 +6,16 @@ require("colours")
 require("set")
 require("autoclose")
 require("gsigns")
-vim.api.nvim_set_hl(0, "Normal", { bg = "None" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "None" })
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "None" })
+-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "None" })
 
 -- ################################# Convert Cursor TO Beam ################################################
 
-vim.api.nvim_create_autocmd("ExitPre", {
-	group = vim.api.nvim_create_augroup("Exit", { clear = true }),
-	command = "set guicursor=a:ver90",
-	desc = "Set cursor back to beam when leaving Neovim."
-})
+-- vim.api.nvim_create_autocmd("ExitPre", {
+-- 	group = vim.api.nvim_create_augroup("Exit", { clear = true }),
+-- 	command = "set guicursor=a:ver90",
+-- 	desc = "Set cursor back to beam when leaving Neovim."
+-- })
 
 -- ################################# Indent Guides #########################################################
 
@@ -176,8 +176,8 @@ ins_left {
 }
 
 ins_left {
-  'filename',
-  path = 1,
+    'filename',
+    path = 1,
   cond = conditions.buffer_not_empty,
   color = { fg = colors.magenta, gui = 'bold' },
 }
@@ -269,3 +269,4 @@ ins_right {
 
 -- Now don't forget to initialize lualine
 lualine.setup(config)
+

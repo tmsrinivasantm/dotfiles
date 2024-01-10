@@ -13,4 +13,5 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 vim.opt.list = true
 vim.opt.cursorline = true
-vim.opt.clipboard:append {"unnamedplus"}
+vim.opt.clipboard:append { 'unnamed', 'unnamedplus' }
+-- vim.opt.wrap = true

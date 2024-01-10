@@ -4,7 +4,7 @@
 vim.g.mapleader = " ";
 
 -- go from file to directory mode
-vim.keymap.set("n", "<leader>bk", vim.cmd.bdelete);
+vim.keymap.set("n", "<leader>bk", ":bd<CR>");
 vim.keymap.set("n", "<leader>bK", ":bd!<CR>");
 vim.keymap.set("n", "<leader>bl", ":b #<CR>");
 
@@ -19,11 +19,14 @@ local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>.', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fP', string.format("<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '%s/.config/nvim'}})<cr>", vim.env.HOME),{})
 vim.keymap.set('n', '<leader>fh', string.format("<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '%s'}})<cr>", vim.env.HOME),{})
+vim.keymap.set('n', '<leader>fp', string.format("<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '%s/Projects'}})<cr>", vim.env.HOME),{})
+vim.keymap.set('n', '<leader>/', builtin.live_grep, {})
 vim.keymap.set('n', '<leader> ', builtin.git_files, {})
+vim.keymap.set('n', '<C-x><C-b>', builtin.buffers, {})
 
 -- Git
-vim.keymap.set('n', '<leader>gg', vim.cmd.Git)
-vim.keymap.set('n', '<leader>gg', vim.cmd.Git)
+vim.keymap.set('n', '<leader>gg', ":vertical G<CR>")
+vim.keymap.set('n', '<leader>gB', ":G blame<CR>")
 
 -- vSplit
 vim.keymap.set('n', '<leader>wv', vim.cmd.vsplit)
@@ -48,24 +51,27 @@ vim.keymap.set('n',  '<Leader>wj', '<C-w><C-j>')
 -- window-close
 vim.keymap.set('n',  '<Leader>wc', '<C-w>c')
 
+-- close all buffers except this
+vim.keymap.set('n',  '<Leader>bd', ':%bd|e#|bd#<cr>|\'"')
+
 -- comment
 vim.keymap.set('n', '<C-_>', vim.cmd.Commentary)
 vim.keymap.set('v', '<C-_>', ":Commentary<CR>")
-vim.keymap.set('i', '<C-_>', vim.cmd.Commentary)
 
 -- c to blackhole
 vim.keymap.set('n', 'c', '"_c')
 vim.keymap.set('v', 'c', '"_c')
 vim.keymap.set('n', 'C', '"_C')
-
 -- s to blackhole
 vim.keymap.set('n', 's', '"_s')
 vim.keymap.set('v', 's', '"_s')
 vim.keymap.set('n', 'S', '"_S')
-
 -- x to blackhole
 vim.keymap.set('n', 'x', '"_x')
 vim.keymap.set('v', 'x', '"_x')
+
+--No highlight
+vim.keymap.set('n', '<C-l>', vim.cmd.nohlsearch)
 
 -- scratch buffer
 local function scratchBuffer ()
@@ -78,7 +84,10 @@ end
 vim.keymap.set('n', '<Leader>x', scratchBuffer)
 
 -- delete current file
-vim.keymap.set('n', '<Leader>fD', ":!rm %")
+vim.keymap.set('n', '<Leader>fD', ':!rm %')
 
---  Select buffer
-vim.keymap.set('n', '<C-x><C-p>', "ggVG")
+-- highlight entire page
+vim.keymap.set('n','<C-x><C-p>','ggVG')
+-- Tab nav
+vim.keymap.set('n','<Leader><tab>l',':tabnext<CR>')
+vim.keymap.set('n','<Leader><tab>h',':tabprevious<CR>')

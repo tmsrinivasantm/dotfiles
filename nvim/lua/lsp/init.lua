@@ -1,20 +1,30 @@
 -- Setup language servers.
 local lspconfig = require('lspconfig')
-lspconfig.tsserver.setup {
-  on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
-  capabilities = capabilities
-}
-lspconfig.rust_analyzer.setup {
-  -- Server-specific settings. See `:help lspconfig-setup`
-  settings = {
-    ['rust-analyzer'] = {},
-  },
-}
+-- lspconfig.pyright.setup {}
+-- lspconfig.tsserver.setup {
+--   on_attach = on_attach,
+--   filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
+--   capabilities = capabilities
+-- }
+-- lspconfig.rust_analyzer.setup {
+--   -- Server-specific settings. See `:help lspconfig-setup`
+--   settings = {
+--     ['rust-analyzer'] = {},
+--   },
+-- }
 
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = false,
+  update_in_insert = false,
+  underline = true,
+  severity_sort = false,
+  float = true,
+})
+
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
@@ -22,13 +32,6 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
-vim.diagnostic.config({
-  virtual_text = true,
-  signs = false,
-  underline = true,
-  update_in_insert = false,
-  severity_sort = false,
-})
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
@@ -66,7 +69,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'clangd', 'rust_analyzer' }
+local servers = { 'tsserver','bashls' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     -- on_attach = my_custom_on_attach,
