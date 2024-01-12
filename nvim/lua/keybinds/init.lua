@@ -88,6 +88,10 @@ vim.keymap.set('n', '<Leader>fD', ':!rm %')
 
 -- highlight entire page
 vim.keymap.set('n','<C-x><C-p>','ggVG')
+
+-- copy entire page
+vim.keymap.set('n','<leader>by','ggVGy')
+
 -- Tab nav
 vim.keymap.set('n','<Leader><tab>l',':tabnext<CR>')
 vim.keymap.set('n','<Leader><tab>h',':tabprevious<CR>')
