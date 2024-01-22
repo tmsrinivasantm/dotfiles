@@ -18,8 +18,6 @@ local builtin = require('telescope.builtin')
 -- end
 vim.keymap.set('n', '<leader>.', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fP', string.format("<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '%s/.config/nvim'}})<cr>", vim.env.HOME),{})
-vim.keymap.set('n', '<leader>fh', string.format("<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '%s'}})<cr>", vim.env.HOME),{})
-vim.keymap.set('n', '<leader>fp', string.format("<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '%s/Projects'}})<cr>", vim.env.HOME),{})
 vim.keymap.set('n', '<leader>/', builtin.live_grep, {})
 vim.keymap.set('n', '<leader> ', builtin.git_files, {})
 vim.keymap.set('n', '<C-x><C-b>', builtin.buffers, {})
@@ -86,6 +84,9 @@ vim.keymap.set('n', '<Leader>x', scratchBuffer)
 -- delete current file
 vim.keymap.set('n', '<Leader>fD', ':!rm %')
 
+-- rename current file
+vim.keymap.set('n', '<Leader>fr', ':!mv % ')
+
 -- highlight entire page
 vim.keymap.set('n','<C-x><C-p>','ggVG')
 
@@ -95,3 +96,7 @@ vim.keymap.set('n','<leader>by','ggVGy')
 -- Tab nav
 vim.keymap.set('n','<Leader><tab>l',':tabnext<CR>')
 vim.keymap.set('n','<Leader><tab>h',':tabprevious<CR>')
+-- Tab close
+vim.keymap.set('n','<Leader><tab>d',':tabclose<CR>')
+-- New Tab + find file
+vim.keymap.set('n', '<leader><tab>n', ":tabnew | lua require'telescope.builtin'.find_files()<cr>")
