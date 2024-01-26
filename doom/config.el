@@ -22,11 +22,14 @@
 (remove-hook 'text-mode-hook #'visual-line-mode)
 
 ;; ################################################################################# KeyBinds #######################################################################################
- (define-key evil-insert-state-map (kbd "C-V") 'clipboard-yank)
- (define-key evil-normal-state-map (kbd "s") 'evil-substitute)
- (define-key evil-normal-state-map (kbd "/") 'consult-line)
- (define-key evil-normal-state-map (kbd "C-'") 'consult-imenu)
-;;  (map! "M-1" #'+workspace/switch-to-0)
+(define-key evil-insert-state-map (kbd "C-V") 'clipboard-yank)
+(define-key evil-normal-state-map (kbd "s") 'evil-substitute)
+(define-key evil-normal-state-map (kbd "/") 'consult-line)
+(define-key evil-normal-state-map (kbd "C-'") 'consult-imenu)
+(define-key evil-normal-state-map (kbd "C-SPC") '+vterm/toggle)
+(define-key evil-insert-state-map (kbd "C-SPC") '+vterm/toggle)
+(define-key evil-normal-state-map (kbd "M-j") '+vterm/toggle)
+;;
 ;;  (map! "M-2" #'+workspace/switch-to-1)
 ;;  (map! "M-3" #'+workspace/switch-to-2)
 ;;  (map! "M-4" #'+workspace/switch-to-3)
