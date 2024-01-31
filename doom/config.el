@@ -48,6 +48,7 @@
 (map! "C-c g r" #'git-gutter:revert-hunk)
 (map! "C-c g s" #'git-gutter:stage-hunk)
 (map! "C-c p d" #'projectile-remove-known-project)
+(map! "M-SPC" #'set-mark-command)
 
 
 ;; ################################################################################# end ############################################################################################
