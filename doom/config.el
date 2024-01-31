@@ -9,7 +9,7 @@
  ;; (setq select-enable-clipboard nil)
 ;; (setq default-frame-alist '((font . "JetBrains Mono Nerd Font 10")))
 (setq shell-file-name "/bin/zsh")
-(setq default-tab-width 2)
+(setq default-tab-width 4)
 (setq-default evil-kill-on-visual-paste nil)
 (setenv "SHELL" shell-file-name)
 
@@ -49,6 +49,7 @@
 (map! "C-c g s" #'git-gutter:stage-hunk)
 (map! "C-c p d" #'projectile-remove-known-project)
 (map! "M-SPC" #'set-mark-command)
+(map! "C-M-/" #'query-replace-regexp)
 
 
 ;; ################################################################################# end ############################################################################################
