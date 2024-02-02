@@ -9,6 +9,7 @@
  ;; (setq select-enable-clipboard nil)
 ;; (setq default-frame-alist '((font . "JetBrains Mono Nerd Font 10")))
 (setq shell-file-name "/bin/zsh")
+(setq save-interprogram-paste-before-kill t)
 (setq default-tab-width 4)
 (setq-default evil-kill-on-visual-paste nil)
 (setenv "SHELL" shell-file-name)
