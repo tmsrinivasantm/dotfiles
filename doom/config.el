@@ -54,6 +54,7 @@
 (map! "C-c p d" #'projectile-remove-known-project)
 (map! "M-SPC" #'set-mark-command)
 (map! "C-M-/" #'query-replace-regexp)
+(map! "C-c b s" #'consult-line)
 
 
 ;; ################################################################################# end ############################################################################################
