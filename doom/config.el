@@ -11,6 +11,7 @@
 (setq shell-file-name "/bin/zsh")
 (setq save-interprogram-paste-before-kill t)
 (setq default-tab-width 4)
+(setq kill-ring-max 10)
 (setq-default evil-kill-on-visual-paste nil)
 (setenv "SHELL" shell-file-name)
 
