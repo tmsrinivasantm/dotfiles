@@ -1,4 +1,4 @@
 fileignoreconfig:
 - filename: nvim/lua/keybinds/init.lua
-  checksum: 59a251f46cc4ef3cafe65b4b64a2db2107cfc1d0404d38a6849dcea5c5817946
+  checksum: 8e45163a96e6b43c40b7cad9d8195ec8282696fa6c35b5c78e8df2fd1edcde35
 version: "1.0"

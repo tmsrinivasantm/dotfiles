@@ -100,3 +100,5 @@ vim.keymap.set('n','<Leader><tab>h',':tabprevious<CR>')
 vim.keymap.set('n','<Leader><tab>d',':tabclose<CR>')
 -- New Tab + find file
 vim.keymap.set('n', '<leader><tab>n', ":tabnew | lua require'telescope.builtin'.find_files()<cr>")
+-- ctrl c is also ctrl g
+vim.keymap.set('n', '<C-g>', '<C-c>')
