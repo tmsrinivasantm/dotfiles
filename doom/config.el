@@ -47,7 +47,7 @@
 (map! "C-." #'end-of-buffer)
 (map! "C-x C-o" #'other-window)
 (map! "C-c g g" #'magit-status)
-(map! "C-c g b" #'magit-checkout)
+(map! "C-c g b" #'magit-branch-checkout)
 (map! "C-c g B" #'magit-blame-addition)
 (map! "C-c g r" #'git-gutter:revert-hunk)
 (map! "C-c g s" #'git-gutter:stage-hunk)
