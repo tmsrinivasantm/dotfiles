@@ -4,7 +4,7 @@
 (setq catppuccin-flavor 'frappe) ;; or 'latte, 'macchiato, or 'mocha
 (setq display-line-numbers-type t)
 (setq org-directory "~/org/")
-(setq doom-font (font-spec :family "JetBrains Mono" :size 13)
+(setq doom-font (font-spec :family "JetBrains Mono NF" :size 13)
       doom-symbol-font (font-spec :family "MesloLGS NF"))
 ;; (setq select-enable-clipboard nil)
 ;; (setq default-frame-alist '((font . "JetBrains Mono Nerd Font 10")))
