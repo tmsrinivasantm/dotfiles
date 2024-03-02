@@ -73,7 +73,7 @@ vim.keymap.set('n', '<C-l>', vim.cmd.nohlsearch)
 
 -- scratch buffer
 local function scratchBuffer ()
-  vim.cmd("belowright 17 split /tmp/scratch.txt")
+  vim.cmd("belowright 22 split /tmp/scratch.txt")
   vim.cmd("setlocal buftype=nofile")
   vim.cmd("setlocal bufhidden=hide")
   vim.cmd("setlocal noswapfile")
