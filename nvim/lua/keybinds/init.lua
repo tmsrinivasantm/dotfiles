@@ -36,15 +36,19 @@ vim.keymap.set('n', '<leader>wS', '<C-w>s<C-w>j')
 
 -- window-focus-left
 vim.keymap.set('n',  '<Leader>wh', '<C-w><C-h>')
+vim.keymap.set('n',  '<C-h>', '<C-w><C-h>')
 
 -- window-focus-right
 vim.keymap.set('n',  '<Leader>wl', '<C-w><C-l>')
+vim.keymap.set('n',  '<C-l>', '<C-w><C-l>')
 
 -- window-focus-up
 vim.keymap.set('n',  '<Leader>wk', '<C-w><C-k>')
+vim.keymap.set('n',  '<C-k>', '<C-w><C-k>')
 
--- window-focus-left
+-- window-focus-down
 vim.keymap.set('n',  '<Leader>wj', '<C-w><C-j>')
+vim.keymap.set('n',  '<C-j>', '<C-w><C-j>')
 
 -- window-close
 vim.keymap.set('n',  '<Leader>wc', '<C-w>c')
@@ -69,7 +73,7 @@ vim.keymap.set('n', 'x', '"_x')
 vim.keymap.set('v', 'x', '"_x')
 
 --No highlight
-vim.keymap.set('n', '<C-l>', vim.cmd.nohlsearch)
+-- vim.keymap.set('n', '<C-l>', vim.cmd.nohlsearch)
 
 -- scratch buffer
 local function scratchBuffer ()
