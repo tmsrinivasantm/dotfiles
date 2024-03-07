@@ -13,6 +13,7 @@
 (setq default-tab-width 4)
 (setq kill-ring-max 10)
 (setq-default evil-kill-on-visual-paste nil)
+(setq vterm-timer-delay 0.01)
 (setenv "SHELL" shell-file-name)
 
 ;; ################################################################################# Hooks ##########################################################################################
