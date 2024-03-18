@@ -36,6 +36,10 @@ if status is-interactive
     alias fgit 'git -c core.sshCommand="ssh -i ~/.ssh/id_ed25519"'
     alias icat 'kitten icat'
     alias top 'htop'
-    config status
+
+
+    function fish_greeting
+      config status
+    end
 
 end
