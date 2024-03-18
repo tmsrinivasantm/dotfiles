@@ -1,6 +1,5 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
-    set fish_greeting
     set -x PATH $HOME/.config/emacs/bin:$HOME/.local/bin:$PATH
     set CC -x "/usr/bin/clang"
     set -x CXX "/usr/bin/clang++"
@@ -37,9 +36,7 @@ if status is-interactive
     alias icat 'kitten icat'
     alias top 'htop'
 
-
     function fish_greeting
       config status
     end
-
 end
