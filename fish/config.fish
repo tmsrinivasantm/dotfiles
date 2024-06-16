@@ -7,7 +7,6 @@ if status is-interactive
     set -x CMAKE_EXPORT_COMPILE_COMMANDS "ON"
     set -x EDITOR $HOME/.local/bin/lvim
     set -x SAM_CLI_TELEMETRY 0
-    set -x AWS_DEFAULT_PROFILE work
 
     source "$HOME/Stash/github/google-cloud-sdk/path.fish.inc"
 
