@@ -12,6 +12,7 @@ lvim.plugins = {
 ------------------------------------------------------------ Keybinds -------------------------------------------------------------------
 
 lvim.builtin.which_key.mappings['w'] = {}
+lvim.transparent_window = true;
 
 -- c to blackhole
 lvim.keys.normal_mode['c'] = '"_c'
