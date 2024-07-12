@@ -1,0 +1,12 @@
+#!/bin/bash
+if [[ -z $(pgrep tmux) ]]; then
+	tmux new-session -s term
+else
+	INFO=$(tmux list-session -F "#{session_name}:#{session_attached}")
+	IS_ATTACHED=$(echo "$INFO" | awk -F ':' '{ if ( $1 == "term" ) print $2 }')
+	if [[ "$IS_ATTACHED" == "1" ]]; then
+		tmux neww -t term
+	else
+		tmux new-session -A -s term
+	fi
+fi

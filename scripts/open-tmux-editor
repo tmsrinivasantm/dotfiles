@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+DIR=$(find "$HOME" -maxdepth 2 -type d -print | fzf)
+# BINARY="$HOME/.local/bin/lvim"
+# cd "$DIR" || exit 1
+if [[ -z $(pgrep tmux) ]]; then
+	tmux new-session -s editor fish -c "cd $DIR && $HOME/.local/bin/lvim"
+else
+	INFO=$(tmux list-session -F "#{session_name}:#{session_attached}")
+	IS_ATTACHED=$(echo "$INFO" | awk -F ':' '{ if ( $1 == "editor" ) print $2 }')
+	if [ "$IS_ATTACHED" == "1" ]; then
+		tmux neww -t editor fish -c "cd $DIR && $HOME/.local/bin/lvim"
+	else
+		tmux new-session -A -s editor fish -c "cd $DIR && $HOME/.local/bin/lvim"
+	fi
+fi
