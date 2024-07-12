@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DIR=$(find "$HOME" -maxdepth 2 -type d -print| $HOME/.fzf/bin/fzf)
+DIR=$(find "$HOME" -maxdepth 2 -type d -print| fzf)
 CONFIG="-Leditor -f $HOME/.config/tmux/editor.conf"
 if [[ -z $(pgrep tmux) ]]; then
 	tmux $CONFIG new-session -s editor bash -c "cd $DIR && export PATH=$HOME/.nvm/versions/node/v16.20.2/bin:$PATH && $HOME/.local/bin/lvim" $CONFIG
