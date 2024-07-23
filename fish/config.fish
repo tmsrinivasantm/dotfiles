@@ -7,6 +7,7 @@ if status is-interactive
     set -x CMAKE_EXPORT_COMPILE_COMMANDS "ON"
     set -x EDITOR $HOME/.local/bin/lvim
     set -x SAM_CLI_TELEMETRY 0
+    set -e DEBUGINFOD_URLS
 
     source "$HOME/Stash/github/google-cloud-sdk/path.fish.inc"
 
@@ -32,7 +33,8 @@ if status is-interactive
     alias ssh 'TERM=tmux-256color command ssh'
     alias config='git --git-dir=$HOME/Projects/dotfiles_bare_git --work-tree=$HOME/.config'
     alias fgit 'git -c core.sshCommand="ssh -i ~/.ssh/id_ed25519"'
-    alias icat 'command kitten icat'
+    # alias icat 'command kitten icat'
+    alias icat 'feh -F'
     alias top 'htop'
 
     function fish_greeting
