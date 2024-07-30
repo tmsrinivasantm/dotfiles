@@ -1,2 +1,2 @@
 # dotfiles
-hyprland config dotfiles
+my config dotfiles
