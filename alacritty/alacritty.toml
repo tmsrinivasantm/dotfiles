@@ -39,7 +39,7 @@ TERM = "xterm-256color"
 size = 9.5
 
 [font.bold]
-family = "MesloLGS NF"
+family = "JetBrains Mono"
 style = "Bold"
 
 [font.bold_italic]
@@ -51,7 +51,7 @@ family = "JetBrains Mono"
 style = "Italic"
 
 [font.normal]
-family = "MesloLGS NF"
+family = "JetBrains Mono"
 style = "Regular"
 
 [font.offset]
