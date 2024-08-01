@@ -9,7 +9,7 @@ if status is-interactive
     set -x SAM_CLI_TELEMETRY 0
     set -e DEBUGINFOD_URLS
 
-    source "$HOME/Stash/github/google-cloud-sdk/path.fish.inc"
+    # source "$HOME/Stash/github/google-cloud-sdk/path.fish.inc"
 
     if [ $XDG_CURRENT_DESKTOP = "GNOME" ]
     	alias logout "gnome-session-quit"
@@ -36,6 +36,8 @@ if status is-interactive
     # alias icat 'command kitten icat'
     alias icat 'feh -F'
     alias top 'htop'
+
+    starship init fish | source
 
     function fish_greeting
       config status
