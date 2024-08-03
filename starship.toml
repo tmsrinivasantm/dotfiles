@@ -73,8 +73,6 @@ $conda\
 $meson\
 $spack\
 $memory_usage\
-$aws\
-$gcloud\
 $openstack\
 $azure\
 $nats\
@@ -88,11 +86,14 @@ $shell\
 $line_break\
 $jobs\
 $battery\
-$time\
 $status\
 $os\
 $container\
 $character"""
+
+right_format = """$time\
+$aws\
+$gcloud"""
 
 # Which is equivalent to
 
@@ -177,7 +178,7 @@ disabled = true
 format = " 🕙 $time($style)\n"
 time_format = "%T"
 style = "bright-white"
-disabled = true
+disabled = false
 
 # Prompt: param 2 └─
 [character]
