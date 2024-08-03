@@ -82,14 +82,14 @@ $crystal\
 $custom\
 $sudo\
 $cmd_duration \
-$shell\
 $line_break\
 $jobs\
 $battery\
 $status\
 $os\
 $container\
-$character"""
+$character\
+$shell"""
 
 right_format = """$time\
 $aws\
@@ -120,8 +120,8 @@ truncation_symbol = "repo: "
 read_only = " "
 
 [shell]
-fish_indicator = '󰈺'
-bash_indicator = ' '
+fish_indicator = '󰈺 '
+bash_indicator = '❯ '
 powershell_indicator = '_'
 unknown_indicator = 'mystery shell'
 style = 'cyan'
@@ -138,7 +138,7 @@ behind = "⇣${count} "
 conflicted = " $count "
 untracked = "?$count "
 modified = "!$count "
-# deleted = " $count "
+deleted = " $count "
 staged = "+$count "
 renamed = " $count "
 stashed = "*$count "
@@ -182,7 +182,8 @@ disabled = false
 
 # Prompt: param 2 └─
 [character]
-success_symbol = " [╰─λ](bold red)"
+success_symbol = " [╰─](bold red)"
+# success_symbol = " [╰─λ](bold red)"
 error_symbol = " [×](bold red)"
 
 # SYMBOLS
