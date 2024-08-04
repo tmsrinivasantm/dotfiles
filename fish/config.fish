@@ -38,6 +38,7 @@ if status is-interactive
     alias top 'htop'
 
     starship init fish | source
+    fzf --fish | source
 
     function fish_greeting
       config status
