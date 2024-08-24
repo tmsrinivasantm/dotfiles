@@ -136,7 +136,7 @@ program = "/bin/fish"
 [window]
 decorations = "none"
 dynamic_padding = false
-opacity = 1.0
+opacity = 0.9
 startup_mode = "Maximized"
 title = "Alacritty"
 

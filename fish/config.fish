@@ -40,6 +40,6 @@ if status is-interactive
     fzf --fish | source
 
     function fish_greeting
-      config status
+      config status -s
     end
 end
