@@ -1,9 +1,8 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
-    set -x PATH $HOME/.config/emacs/bin:$HOME/.local/bin:$PATH
+    set -x PATH $HOME/.local/bin:$PATH
     set CC -x "/usr/bin/clang"
     set -x CXX "/usr/bin/clang++"
-    set -x PATH $HOME/.config/emacs/bin:$HOME/.local/bin:$PATH
     set -x CMAKE_EXPORT_COMPILE_COMMANDS "ON"
     set -x EDITOR $HOME/.local/bin/lvim
     set -x SAM_CLI_TELEMETRY 0
