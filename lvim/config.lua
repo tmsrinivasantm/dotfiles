@@ -82,12 +82,6 @@ lvim.plugins = { {
                     --     highlight.fg = palette.foam
                     -- end
                 end,
-                -- on_highlights = function(hl, colors)
-                --     vim.api.nvim_set_hl(0, "LspReferenceText", { fg = "#2E3440" })
-                --     vim.api.nvim_set_hl(0, "LspReferenceRead", { fg = "#2E3440" })
-                --     vim.api.nvim_set_hl(0, "LspReferenceWrite", { fg = "#2E3440" })
-                --     vim.api.nvim_set_hl(0, "Visual", { bg = "#2E3440" })
-                -- end,
             })
 
             vim.cmd("colorscheme rose-pine")
