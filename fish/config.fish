@@ -10,16 +10,18 @@ if status is-interactive
 
     # source "$HOME/Stash/github/google-cloud-sdk/path.fish.inc"
 
-    if [ $XDG_CURRENT_DESKTOP = "GNOME" ]
-    	alias logout "gnome-session-quit"
+    if test -z "$XDG_CURRENT_DESKTOP"
+    	alias logout "bspc quit"
     else if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]
     	alias logout "qdbus org.kde.ksmserver /KSMServer logout 0 0 0"
     	alias poweroff="systemctl poweroff"
     	alias reboot "systemctl reboot"
     else if [ $XDG_SESSION_TYPE = "wayland" ]
     	alias logout "hyprctl dispatch exit"
-    else if test -z "$XDG_CURRENT_DESKTOP"
-    	alias logout "bspc quit"
+    else if [ $XDG_SESSION_TYPE = "QTILE" ]
+        alias logout "qtile cmd-obj -o cmd -f shutdown"
+    else if [ $XDG_CURRENT_DESKTOP = "GNOME" ]
+    	alias logout "gnome-session-quit"
     else
     	alias logout "loginctl terminate-session self"
     end
