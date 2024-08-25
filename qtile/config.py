@@ -72,6 +72,12 @@ keys = [
     Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
+    Key([],"XF86MonBrightnessUp",lazy.spawn("brightnessctl set 5%+")),
+    Key([],"XF86MonBrightnessDown",lazy.spawn("brightnessctl set 5%-")),
+
+    Key([],"XF86AudioRaiseVolume",lazy.spawn(os.path.expanduser("~/.config/qtile/volumecontrol.sh i"))),
+    Key([],"XF86AudioLowerVolume",lazy.spawn(os.path.expanduser("~/.config/qtile/volumecontrol.sh d"))),
+    Key([],"XF86AudioMute",lazy.spawn(os.path.expanduser("~/.config/qtile/volumecontrol.sh m"))),
 ]
 
 # Add key bindings to switch VTs in Wayland.
