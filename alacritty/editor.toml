@@ -1,5 +1,5 @@
 import = [
-    '~/.config/alacritty/tokyo-night.toml'
+    '~/.config/alacritty/decay.toml'
 ]
 
 [colors]
@@ -136,7 +136,7 @@ program = "/bin/fish"
 [window]
 decorations = "none"
 dynamic_padding = false
-opacity = 0.9
+opacity = 0.95
 startup_mode = "Maximized"
 title = "Alacritty"
 

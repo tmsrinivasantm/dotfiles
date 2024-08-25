@@ -1,5 +1,5 @@
 import = [
-    '~/.config/alacritty/tokyo-night.toml'
+    '~/.config/alacritty/decay.toml'
 ]
 [colors]
 draw_bold_text_with_bright_colors = true
