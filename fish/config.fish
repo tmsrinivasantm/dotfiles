@@ -37,7 +37,7 @@ if status is-interactive
     # alias icat 'command kitten icat'
     alias icat 'feh -F'
     alias top 'htop'
-    alias cat 'bat'
+    alias cat 'cat -v'
 
     starship init fish | source
     fzf --fish | source
