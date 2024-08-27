@@ -66,7 +66,7 @@ lvim.plugins = { {
                 },
 
                 highlight_groups = {
-                    Comment = { fg = "#44415a" },
+                    Comment = { fg = "#575757" },
                     -- VertSplit = { fg = "muted", bg = "muted" },
                 },
 
