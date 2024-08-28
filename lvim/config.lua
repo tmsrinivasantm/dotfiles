@@ -21,7 +21,7 @@ lvim.plugins = { {
                     migrations = true, -- Handle deprecated options automatically
                 },
                 styles = {
-                    bold = false,
+                    bold = true,
                     italic = true,
                     transparency = true,
                 },
