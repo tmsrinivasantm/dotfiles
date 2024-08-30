@@ -13,7 +13,7 @@ sxhkd -c "$HOME/.config/bspwm/sxhkdrc" &
 blueman-applet &
 nm-applet &
 dunst &
-# /usr/bin/emacs --daemon &
+
 var=$(xinput --list | grep 'MSFT0001:01 04F3:309E Touchpad' | awk '{print $6}' | awk -F '=' '{print $2}')
 xinput --set-prop $var 'libinput Natural Scrolling Enabled' 1
 xinput --set-prop $var 'libinput Tapping Enabled' 1
@@ -40,14 +40,13 @@ bspc config pointer_action1 move
 bspc config pointer_action2 resize_side
 bspc config pointer_action3 resize_corner
 bspc rule -a firefox desktop=^1 state=tiled follow=on
-bspc rule -a Alacritty state=tiled follow=on
+bspc rule -a Alacritty desktop=^3 state=tiled follow=on
 bspc rule -a kitty desktop=^2 state=tiled follow=on
 bspc rule -a discord desktop=^5 state=fullscreen follow=on
 # bspc rule -a discord-screenaudio desktop=yay state=fullscreen follow=on
 bspc rule -a Blender desktop=^5 state=fullscreen follow=on
 bspc rule -a Slack desktop=^5 state=fullscreen follow=on
-bspc rule -a Emacs desktop=^2 state=fullscreen follow=on
+bspc rule -a editor desktop=^2 state=tiled follow=on
 bspc rule -a Godot desktop=^5 state=fullscreen follow=on
 bspc rule -a Wireshark desktop=^4 state=fullscreen follow=on
-bspc rule -a 'ONLYOFFICE Desktop Editors' desktop=^5 state=fullscreen follow=on
 polybar-msg cmd hide

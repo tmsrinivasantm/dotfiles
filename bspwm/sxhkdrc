@@ -171,9 +171,9 @@ XF86MonBrightnessDown
 Print 
   flameshot gui
 
-# open doom emacs
 super + n
    alacritty --class editor --config-file "$HOME/.config/alacritty/editor.toml" -e "$HOME/.local/bin/open-tmux-editor" 
+
 # show bar on key press
 ctrl + shift + space
     polybar-msg cmd toggle
