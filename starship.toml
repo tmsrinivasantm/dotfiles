@@ -282,6 +282,10 @@ symbol = " "
 [swift]
 symbol = "ﯣ "
 
+[c]
+format = 'via [$name $version ]($style)'
+commands = [['clang', '--version'],['gcc','--version']]
+
 [nodejs]
 format = "via [ Node.js $version](bold green) "
 detect_files = ["package.json", ".node-version"]
