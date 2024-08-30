@@ -105,6 +105,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 
 ------------------------------------------------------------ Keybinds -------------------------------------------------------------------
 
+lvim.builtin.bufferline.active = false
 lvim.builtin.which_key.mappings['w'] = {}
 lvim.transparent_window = true;
 lvim.colorscheme = 'rose-pine-main'
