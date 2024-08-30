@@ -15,7 +15,7 @@ style = "Block"
 TERM = "xterm-256color"
 
 [font]
-size = 9.8
+size = 6.5
 
 [font.bold]
 family = "JetBrains Mono Nerd Font"
@@ -130,7 +130,7 @@ program = "/bin/fish"
 [window]
 decorations = "none"
 dynamic_padding = false
-opacity = 0.8
+opacity = 1.0
 startup_mode = "Maximized"
 title = "Alacritty"
 
