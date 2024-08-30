@@ -148,5 +148,4 @@ lvim.builtin.which_key.mappings['g'] = {
 
 vim.opt.shiftwidth = 4 -- the number of spaces inserted for each indentation
 vim.opt.tabstop = 4    -- insert 2 spaces for a tab
-vim.opt.showtabline = 0
 -----------------------------------------------------------------------------------------------------------------------------------------
