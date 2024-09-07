@@ -53,7 +53,7 @@ keys = [
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.spawn("alacritty --config-file=/home/srinivasan/.config/alacritty/editor.toml --class=editor -e " + os.path.expanduser("~/.local/bin/open-tmux-editor")), desc="Open Editor"),
-    Key(["control", "shift"], "l", lazy.spawn("i3lock -i /home/srinivasan/Pictures/wallpapers/Decay-Green/aurora_borealis.png"), desc="Lock screen"),
+    Key(["control", "shift"], "l", lazy.spawn("xsecurelock"), desc="Lock screen"),
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
