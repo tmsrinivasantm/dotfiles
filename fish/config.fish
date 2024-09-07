@@ -18,8 +18,6 @@ if status is-interactive
     	alias reboot "systemctl reboot"
     else if [ $XDG_SESSION_TYPE = "wayland" ]
     	alias logout "hyprctl dispatch exit"
-    else if [ $XDG_SESSION_TYPE = "QTILE" ]
-        alias logout "qtile cmd-obj -o cmd -f shutdown"
     else if [ $XDG_CURRENT_DESKTOP = "GNOME" ]
     	alias logout "gnome-session-quit"
     else
