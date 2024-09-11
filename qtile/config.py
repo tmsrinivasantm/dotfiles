@@ -67,10 +67,10 @@ keys = [
     # Key([mod], "Return", lazy.spawn("alacritty -e /home/srinivasan/.local/bin/termtmux"), desc="Launch terminal"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     # Toggle between different layouts as defined below
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod], "m", lazy.next_layout(), desc="Toggle between layouts"),
     Key(["control"], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod], "f", lazy.spawn("firefox"), desc="Open browser",),
-    Key([mod], "m", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window",),
+    # Key([mod], "m", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window",),
     Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
@@ -134,18 +134,18 @@ for i in groups:
 
 layouts = [
     # layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
-    # layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
-    layout.Bsp(border_focus="#4e9170", margin=10, border_width=1, border_on_single=True),
+     # layout.Bsp(border_focus="#4e9170", margin=10, border_width=1, border_on_single=True),
     # layout.Matrix(),
-    # layout.MonadTall(),
+    # layout.MonadTall(border_focus="#4e9170", margin=10, border_width=1, border_width_single=1),
     # layout.MonadWide(),
     # layout.RatioTile(),
     # layout.Tile(),
+    layout.Plasma(border_focus="#4e9170", margin=10, border_width=1, border_width_single=1),
+    layout.Max(),
     # layout.TreeTab(),
     # layout.VerticalTile(),
-    # layout.Zoomy(),
 ]
 
 widget_defaults = dict(
@@ -219,6 +219,7 @@ floating_layout = layout.Floating(
 @hook.subscribe.startup_once
 def autostart_once():
     os.environ["XDG_CURRENT_DESKTOP"] = "QTILE"
+    os.environ["XSECURELOCK_SAVER"] = "saver_blank"
     subprocess.run(os.path.expanduser("~/.config/qtile/autostart_once.sh"))
 
 auto_fullscreen = True
