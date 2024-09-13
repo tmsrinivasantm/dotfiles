@@ -30,6 +30,13 @@ import subprocess, os
 mod = "mod4"
 terminal = guess_terminal()
 
+def selective_term_launch(qtile):
+    current_group = qtile.current_group.name
+    if current_group == "3":
+        qtile.cmd_spawn("alacritty -e /home/srinivasan/.local/bin/termtmux")
+    else:
+        qtile.cmd_spawn("alacritty")
+
 keys = [
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
@@ -64,8 +71,8 @@ keys = [
         lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack",
     ),
-    Key([mod], "Return", lazy.spawn("alacritty -e /home/srinivasan/.local/bin/termtmux"), desc="Launch terminal"),
-    # Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    # Key([mod], "Return", lazy.spawn("alacritty -e /home/srinivasan/.local/bin/termtmux"), desc="Launch terminal"),
+    Key([mod], "Return", lazy.function(lambda qtile: selective_term_launch(qtile)), desc="Launch terminal"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key(["control"], "q", lazy.window.kill(), desc="Kill focused window"),
