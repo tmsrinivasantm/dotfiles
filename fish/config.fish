@@ -36,6 +36,7 @@ if status is-interactive
     alias icat 'feh -F'
     alias top 'htop'
     alias cat 'cat -v'
+    alias apg 'command apg -t -MSNcl -m 8'
 
     starship init fish | source
     fzf --fish | source
