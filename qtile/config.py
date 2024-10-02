@@ -160,12 +160,7 @@ widget_defaults = dict(
     fontsize=12.5
 )
 extension_defaults = widget_defaults.copy()
-
-screens = [
-    Screen(
-        wallpaper='~/Pictures/wallpapers/Decay-Green/moments_before_desk.png',
-        wallpaper_mode='stretch',
-        top=bar.Bar(
+mybar = bar.Bar(
             [
                 # widget.CurrentLayout(),
                 # widget.GroupBox(),
@@ -192,10 +187,13 @@ screens = [
                 widget.Spacer(length=10),
                 # widget.QuickExit(),
             ],
-            24,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
-        ),
+            24
+            )
+screens = [
+    Screen(
+        wallpaper='~/Pictures/wallpapers/Decay-Green/moments_before_desk.png',
+        wallpaper_mode='stretch',
+        top = mybar,
         # You can uncomment this variable if you see that on X11 floating resize/moving is laggy
         # By default we handle these events delayed to already improve performance, however your system might still be struggling
         # This variable is set to None (no cap) by default, but you can set it to 60 to indicate that you limit it to 60 events per second
@@ -231,6 +229,7 @@ floating_layout = layout.Floating(
 )
 @hook.subscribe.startup_once
 def autostart_once():
+    mybar.window.window.set_property("QTILE_BAR", 1, "CARDINAL", 32)
     os.environ["XDG_CURRENT_DESKTOP"] = "QTILE"
     os.environ["XSECURELOCK_SAVER"] = "saver_blank"
     subprocess.run(os.path.expanduser("~/.config/qtile/autostart_once.sh"))

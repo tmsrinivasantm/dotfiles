@@ -31,8 +31,6 @@ if status is-interactive
     alias reloademacs 'emacsclient -e "(kill-emacs)" && emacs --daemon' 
     alias ssh 'TERM=tmux-256color command ssh'
     alias config='git --git-dir=$HOME/Projects/dotfiles_bare_git --work-tree=$HOME/.config'
-    alias fgit 'git -c core.sshCommand="ssh -i ~/.ssh/id_ed25519"'
-    # alias icat 'command kitten icat'
     alias icat 'feh -F'
     alias top 'htop'
     alias cat 'cat -v'
