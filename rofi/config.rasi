@@ -32,19 +32,19 @@ mainbox {
     enabled:                     true;
     spacing:                     0px;
     orientation:                 horizontal;
-    children:                    [  "inputbar" , "listbox" ];
+    children:                    [   "listbox" , "inputbar" ];
     background-color:            transparent;
-	background-image:            url("~/Pictures/wallpapers/Decay-Green/arcade_decay_red.png", height);
+	// background-image:            url("~/Pictures/wallpapers/Decay-Green/arcade_decay_red.png", height);
 }
 
 
 // Inputs //
 inputbar {
     enabled:                     true;
-    width:                       25%;
-	children:                    [ "mode-switcher" , "entry" ];
-	background-color:            transparent;
-	background-image:            url("~/Pictures/wallpaper/rain_world1.png", height);
+    width:                       0%;
+	children:                    [  "entry" ];
+	background-color:            @background;
+	// background-image:            url("~/Pictures/wallpaper/rain_world1.png", height);
 }
 entry {
     enabled:                     false;
@@ -57,10 +57,10 @@ mode-switcher{
     enabled:                     true;
     spacing:                     0px;
     width:                       2.5%;
-    padding:                     160px 10px 160px 10px;
+    padding:                     160px 30px 160px 10px;
     spacing:                     25px;
-    background-color:            transparent;
-	background-image:            url("~/Pictures/wallpaper/rain_world1.png", height);
+    background-color:            @background;
+	// background-image:            url("~/Pictures/wallpaper/rain_world1.png", height);
 }
 button {
     cursor:                      pointer;
