@@ -232,6 +232,8 @@ def autostart_once():
     mybar.window.window.set_property("QTILE_BAR", 1, "CARDINAL", 32)
     os.environ["XDG_CURRENT_DESKTOP"] = "QTILE"
     os.environ["XSECURELOCK_SAVER"] = "saver_blank"
+    os.environ["XSECURELOCK_SAVER"] = "saver_blank"
+    os.environ["XSECURELOCK_NO_COMPOSITE"] = "1"
     subprocess.run(os.path.expanduser("~/.config/qtile/autostart_once.sh"))
 
 auto_fullscreen = True
