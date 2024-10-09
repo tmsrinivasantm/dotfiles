@@ -123,6 +123,12 @@ lvim.keys.normal_mode['S'] = '"_S'
 -- x to blackhole
 lvim.keys.normal_mode['x'] = '"_x'
 lvim.keys.visual_mode['x'] = '"_x'
+-- zoom pane
+lvim.builtin.which_key.mappings['z'] = {
+    "Zoom",
+    i = { "<cmd>tab split<CR>", "Zoom in" },
+    o = { "<cmd>tab close<CR>", "Zoom out" },
+}
 -- vertical split
 lvim.builtin.which_key.mappings['w'] = {
     "Window",
