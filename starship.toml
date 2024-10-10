@@ -91,9 +91,7 @@ $container\
 $character\
 $shell"""
 
-right_format = """$time\
-$aws\
-$gcloud"""
+right_format = """$time"""
 
 # Which is equivalent to
 
