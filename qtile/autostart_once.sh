@@ -6,4 +6,5 @@ xinput --set-propo "$var" 'libinput Tapping Enabled' 1
 picom -b --config ~/.config/picom/picom.conf &
 nm-applet &
 dunst &
+blueman-applet &
 sleep 15 && xset s 600 0 && xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
