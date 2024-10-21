@@ -7,4 +7,4 @@ picom -b --config ~/.config/picom/picom.conf &
 nm-applet &
 dunst &
 blueman-applet &
-sleep 15 && xset s 600 0 && xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
+sleep 15 && xset s 600 5 && xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &

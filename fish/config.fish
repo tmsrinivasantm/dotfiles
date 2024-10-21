@@ -21,7 +21,7 @@ if status is-interactive
     else if [ $XDG_SESSION_TYPE = "wayland" ]
     	alias logout "hyprctl dispatch exit"
     else if [ $XDG_CURRENT_DESKTOP = "GNOME" ]
-    	alias logout "gnome-session-quit"
+    	alias logout "gnome-session-quit --no-prompt --logout"
     end
 
 

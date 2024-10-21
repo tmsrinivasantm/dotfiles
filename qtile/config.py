@@ -60,7 +60,7 @@ keys = [
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.spawn("alacritty --config-file=/home/srinivasan/.config/alacritty/editor.toml --class=editor -e " + os.path.expanduser("~/.local/bin/open-tmux-editor")), desc="Open Editor"),
-    Key(["control", "shift"], "l", lazy.spawn("xsecurelock"), desc="Lock screen"),
+    Key([mod], "Backspace", lazy.spawn("xsecurelock"), desc="Lock screen"),
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
@@ -143,13 +143,13 @@ layouts = [
     # layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
-     # layout.Bsp(border_focus="#4e9170", margin=10, border_width=1, border_on_single=True),
+     layout.Bsp(border_focus="#4e9170", margin=10, border_width=1, border_on_single=True),
     # layout.Matrix(),
     # layout.MonadTall(border_focus="#4e9170", margin=10, border_width=1, border_width_single=1),
     # layout.MonadWide(),
     # layout.RatioTile(),
     # layout.Tile(),
-    layout.Plasma(border_focus="#4e9170", margin=10, border_width=1, border_width_single=1),
+    # layout.Plasma(border_focus="#4e9170", margin=10, border_width=1, border_width_single=1),
     layout.Max(),
     # layout.TreeTab(),
     # layout.VerticalTile(),
