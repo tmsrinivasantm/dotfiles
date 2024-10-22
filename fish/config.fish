@@ -39,7 +39,12 @@ if status is-interactive
     starship init fish | source
     fzf --fish | source
 
+    function multicd
+      echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
+    end
     function fish_greeting
       config status -s
     end
+
+    abbr --add dotdot --regex '^\.\.+$' --function multicd
 end
