@@ -1,3 +1,4 @@
+[general]
 import = [
     '~/.config/alacritty/decay.toml'
 ]
@@ -130,7 +131,7 @@ mods = "Control|Shift"
 [scrolling]
 history = 300
 
-[shell]
+[terminal.shell]
 program = "/bin/fish"
 
 [window]
