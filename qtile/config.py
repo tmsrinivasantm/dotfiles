@@ -33,9 +33,9 @@ terminal = guess_terminal()
 def selective_term_launch(qtile):
     current_group = qtile.current_group.name
     if current_group == "3":
-        qtile.cmd_spawn("alacritty -e /home/srinivasan/.local/bin/termtmux")
+        qtile.cmd_spawn("alacritty msg create-window -e /home/srinivasan/.local/bin/termtmux")
     else:
-        qtile.cmd_spawn("alacritty")
+        qtile.cmd_spawn("alacritty msg create-window")
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -59,7 +59,7 @@ keys = [
     Key([mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
-    Key([mod], "n", lazy.spawn("alacritty --config-file=/home/srinivasan/.config/alacritty/editor.toml --class=editor -e " + os.path.expanduser("~/.local/bin/open-tmux-editor")), desc="Open Editor"),
+    Key([mod], "n", lazy.spawn("alacritty --config-file=/home/srinivasan/.config/alacritty/editor.toml msg create-window --class=editor -e " + os.path.expanduser("~/.local/bin/open-tmux-editor")), desc="Open Editor"),
     Key([mod], "Backspace", lazy.spawn("xsecurelock"), desc="Lock screen"),
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
