@@ -36,9 +36,6 @@ if status is-interactive
     alias cat 'cat -v'
     alias apg 'command apg -t -MSNCl -m 8'
 
-    starship init fish | source
-    fzf --fish | source
-
     function multicd
       echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
     end
