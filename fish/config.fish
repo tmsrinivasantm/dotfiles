@@ -35,6 +35,7 @@ if status is-interactive
     alias top 'htop'
     alias cat 'cat -v'
     alias apg 'command apg -t -MSNCl -m 8'
+    alias startx 'ssh-agent startx'
 
     function multicd
       echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
