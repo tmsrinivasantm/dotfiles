@@ -8,4 +8,5 @@ nm-applet &
 dunst &
 blueman-applet &
 alacritty --daemon &
+keepassxc &
 sleep 15 && xset s 600 5 && xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
