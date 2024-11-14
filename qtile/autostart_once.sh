@@ -8,6 +8,6 @@ nm-applet &
 dunst &
 blueman-applet &
 alacritty --daemon &
-keepassxc &
+keepassxc "$HOME/.config/keepassxc/databases/Passwords.kdbx" &
 flameshot &
 sleep 15 && xset s 600 5 && xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
