@@ -151,7 +151,8 @@ lvim.builtin.which_key.mappings['g'] = {
     "Git",
     g = { "<cmd>vertical G<CR>", "Git status" },
     b = { "<cmd>G blame<cr>", "git blame" },
-    r = { "<cmd>Gitsigns reset_hunk<cr>", "revert hunk" }
+    r = { "<cmd>Gitsigns reset_hunk<cr>", "revert hunk" },
+    s = { "<cmd>Gitsigns stage_hunk<cr>", "stage hunk"}
 }
 
 vim.opt.shiftwidth = 4 -- the number of spaces inserted for each indentation
