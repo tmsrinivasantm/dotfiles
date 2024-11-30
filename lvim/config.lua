@@ -107,6 +107,11 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 
 lvim.builtin.bufferline.active = false
 lvim.builtin.terminal.active = false;
+lvim.builtin.telescope.defaults = {
+    file_ignore_patterns = {
+        "node_modules"
+    }
+}
 lvim.builtin.indentlines.options.show_current_context = false;
 lvim.builtin.which_key.mappings['w'] = {}
 lvim.transparent_window = true;
