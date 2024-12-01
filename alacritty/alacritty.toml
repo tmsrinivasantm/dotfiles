@@ -17,7 +17,7 @@ style = "Block"
 TERM = "xterm-256color"
 
 [font]
-size = 6.5
+size = 9.5
 
 [font.bold]
 family = "JetBrains Mono Nerd Font"
