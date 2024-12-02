@@ -123,6 +123,11 @@ key = "End"
 mode = "~Alt"
 mods = "Shift"
 
+[[keyboard.bindings]]
+action = "None"
+key = "Space"
+mods = "Control|Shift"
+
 [scrolling]
 history = 1000
 

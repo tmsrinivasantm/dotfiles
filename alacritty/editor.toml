@@ -129,7 +129,7 @@ key = "Space"
 mods = "Control|Shift"
 
 [scrolling]
-history = 300
+history = 1000
 
 [terminal.shell]
 program = "/bin/fish"

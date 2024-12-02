@@ -1,4 +1,6 @@
 fileignoreconfig:
 - filename: nvim/lua/keybinds/init.lua
   checksum: 8e45163a96e6b43c40b7cad9d8195ec8282696fa6c35b5c78e8df2fd1edcde35
+- filename: alacritty/alacritty.toml
+  checksum: 43d3db889a6309354c3ac8e50be9116413249305aa36c51af8cde4ee6669ba42
 version: "1.0"
