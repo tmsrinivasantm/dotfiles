@@ -83,12 +83,12 @@ $custom\
 $sudo\
 $cmd_duration \
 $line_break\
-$jobs\
 $battery\
 $status\
 $os\
 $container\
 $character\
+$jobs\
 $shell"""
 
 right_format = """$time"""
@@ -283,6 +283,9 @@ symbol = "ﯣ "
 [c]
 format = 'via [$name $version ]($style)'
 commands = [['clang', '--version'],['gcc','--version']]
+
+[jobs]
+format = "[$symbol $number]($style) "
 
 [nodejs]
 format = "via [ Node.js $version](bold green) "
