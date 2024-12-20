@@ -6,6 +6,7 @@
 ### startup
 exec blueman-applet
 exec nm-applet
+exec keepassxc
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
