@@ -18,6 +18,8 @@ if status is-interactive
     	alias reboot "systemctl reboot"
     else if [ $XDG_CURRENT_DESKTOP = "QTILE" ]
     	alias logout "qtile cmd-obj -o cmd -f shutdown"
+    else if [ $XDG_CURRENT_DESKTOP = "SWAY" ]
+    	alias logout "sway exit"
     else if [ $XDG_CURRENT_DESKTOP = "GNOME" ]
     	alias logout "gnome-session-quit --no-prompt --logout"
     else if [ $XDG_SESSION_TYPE = "wayland" ]
