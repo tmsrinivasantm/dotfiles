@@ -221,9 +221,9 @@ bindsym $mod+r mode "resize"
 # Border:
     default_border pixel 2
     default_floating_border pixel 2
-    # hide_edge_borders --i3 smart
+    hide_edge_borders --i3 smart
     # smart_borders on
-    # smart_gaps on
+    smart_gaps on
     titlebar_border_thickness 0
     client.focused #ff0000 #4e9170 #ffffff #0a942d
 #
@@ -236,6 +236,7 @@ bar {
     # workspace_buttons no
     tray_padding 5
     separator_symbol "  "
+    modifier Mod1+Mod4
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
