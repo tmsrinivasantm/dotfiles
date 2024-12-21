@@ -236,7 +236,7 @@ bar {
     # workspace_buttons no
     tray_padding 5
     separator_symbol "  "
-    modifier Mod1+Mod4
+    modifier Mod4
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
