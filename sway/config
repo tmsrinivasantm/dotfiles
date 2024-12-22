@@ -7,7 +7,6 @@
 exec blueman-applet
 exec nm-applet
 exec keepassxc
-xwayland disable
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
