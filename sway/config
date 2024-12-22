@@ -7,6 +7,7 @@
 exec blueman-applet
 exec nm-applet
 exec keepassxc
+xwayland disable
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -77,7 +78,7 @@ input type:touchpad {
     bindsym $mod+n exec foot --config ~/.config/foot/editor.ini ~/.local/bin/open-tmux-editor
 
     # browser
-    bindsym $mod+f exec firefox
+    bindsym $mod+f exec chromium --ozone-platform-hint=auto --enable-features=TouchpadOverscrollHistoryNavigation,UseOzonePlatform
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
