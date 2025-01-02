@@ -29,8 +29,6 @@ if status is-interactive
 
     alias vim lvim 
     alias nvim lvim
-    alias killemacs 'emacsclient -e "(kill-emacs)"'
-    alias reloademacs 'emacsclient -e "(kill-emacs)" && emacs --daemon' 
     alias ssh 'TERM=tmux-256color command ssh'
     alias config='git --git-dir=$HOME/Projects/dotfiles_bare_git --work-tree=$HOME/.config'
     alias icat 'feh -F'
