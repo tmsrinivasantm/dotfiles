@@ -64,7 +64,7 @@ input type:touchpad {
     # Start a terminal
     bindsym $mod+Return exec $term
 
-    # Kill focused window
+    # close focused window
     bindsym Ctrl+q kill
 
     # Start your launcher
@@ -222,7 +222,7 @@ bindsym $mod+r mode "resize"
     default_border pixel 2
     default_floating_border pixel 2
     # hide_edge_borders --i3 smart
-    # smart_borders on
+    smart_borders on
     smart_gaps on
     titlebar_border_thickness 0
     client.focused #ff0000 #4e9170 #ffffff #0a942d
@@ -232,11 +232,11 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     position top
-    mode hide
+    mode dock
     # workspace_buttons no
     tray_padding 5
     separator_symbol "  "
-    modifier Mod4
+    # modifier Mod4
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
