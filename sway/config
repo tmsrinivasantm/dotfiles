@@ -71,7 +71,7 @@ input type:touchpad {
     bindsym $mod+space exec rofi -show drun
 
     # Lock
-    bindsym $mod+backspace exec swaylock -i ~/Pictures/wallpapers/Material-Sakura/material_pastel_5.jpg
+    bindsym $mod+backspace exec swaylock -c 000000
 
     # Editor
     bindsym $mod+n exec foot --config ~/.config/foot/editor.ini ~/.local/bin/open-tmux-editor
