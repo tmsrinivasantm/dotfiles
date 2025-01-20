@@ -155,7 +155,7 @@ lvim.keys.normal_mode['<leader>x'] = scratchBuffer
 lvim.builtin.which_key.mappings['g'] = {
     "Git",
     g = { "<cmd>vertical G<CR>", "Git status" },
-    b = { "<cmd>G blame<cr>", "git blame" },
+    B = { "<cmd>G blame<cr>", "git blame" },
     r = { "<cmd>Gitsigns reset_hunk<cr>", "revert hunk" },
     s = { "<cmd>Gitsigns stage_hunk<cr>", "stage hunk"}
 }
