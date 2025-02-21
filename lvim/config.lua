@@ -140,6 +140,7 @@ lvim.builtin.which_key.mappings['w'] = {
     v = { "<cmd>vsplit<CR>", "vertical split" },
     s = { "<cmd>split<CR>", "horizontal split" },
 }
+lvim.keys.normal_mode['<leader>wx'] = '<C-w>x'
 -- window close
 lvim.keys.normal_mode['<leader>wc'] = '<C-w>c'
 -- scratch buffer
