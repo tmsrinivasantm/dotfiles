@@ -22,7 +22,7 @@ set $term bash -c 'if [ $(swaymsg -t get_workspaces | jq -r ".[] | select(.focus
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output "*" bg ~/Pictures/wallpapers/Decay-Green/moments_before_desk.png fill
+output "*" bg ~/Pictures/wallpapers/Catppuccin-Latte/rocket_launch.png fill
 #
 # Example configuration:
 #
@@ -245,7 +245,7 @@ bar {
     colors {
         statusline #ffffff
         background #000000
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        inactive_workspace #323232FF #323232FF #5c5c5cFF
     }
 }
 
