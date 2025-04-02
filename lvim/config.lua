@@ -112,6 +112,9 @@ lvim.plugins = { {
 
 lvim.builtin.bufferline.active = false
 lvim.builtin.terminal.active = false;
+lvim.builtin.gitsigns.opts = {
+    sign_priority = 15
+}
 lvim.builtin.telescope.defaults = {
     file_ignore_patterns = {
         "node_modules"
