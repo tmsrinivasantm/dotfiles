@@ -1,5 +1,4 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
+if status is-interactive # Commands to run in interactive sessions can go here
     set -x PATH $HOME/.local/bin:$PATH 
     set -x CC "/usr/bin/clang"
     set -x CXX "/usr/bin/clang++"
@@ -37,7 +36,7 @@ if status is-interactive
     alias apg 'command apg -t -MSNCl -m 8'
     alias startx 'ssh-agent startx; exit'
     alias l 'ls'
-    alias neofetch 'fastfetch'
+    # alias neofetch 'fastfetch'
 
     function multicd
       echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
