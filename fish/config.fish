@@ -36,7 +36,10 @@ if status is-interactive # Commands to run in interactive sessions can go here
     alias apg 'command apg -t -MSNCl -m 8'
     alias startx 'ssh-agent startx; exit'
     alias l 'ls'
-    # alias neofetch 'fastfetch'
+    alias neofetch 'fastfetch'
+
+    fzf --fish | source
+    starship init fish | source
 
     function multicd
       echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
