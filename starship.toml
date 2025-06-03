@@ -94,7 +94,7 @@ $shell"""
 # Which is equivalent to
 
 [username]
-format = " [╭─  $user]($style)@"
+format = " [╭─  $user]($style)@"
 style_user = "red"
 style_root = "red"
 show_always = true
