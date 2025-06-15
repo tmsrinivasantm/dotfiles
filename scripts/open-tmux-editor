@@ -7,13 +7,13 @@ FINAL=$(echo "${DIR[@]}" | tr ' ' '\n' | fzf)
 CONFIG="-Leditor -f $HOME/.config/tmux/editor.conf"
 
 if [[ $(ps -aux | grep -c "tmux -Leditor") == "1" ]]; then
-	tmux $CONFIG new-session -s editor bash -c "cd $FINAL && $HOME/.local/bin/lvim"
+	tmux $CONFIG new-session -s editor fish -c "cd $FINAL && source ~/.config/fish/config.fish && $HOME/.local/bin/lvim"
 else
 	INFO=$(tmux $CONFIG list-session -F "#{session_name}:#{session_attached}")
 	IS_ATTACHED=$(echo "$INFO" | awk -F ':' '{ if ( $1 == "editor" ) print $2 }')
 	if [ "$IS_ATTACHED" == "1" ]; then
-		tmux $CONFIG neww -t editor bash -c "cd $FINAL && $HOME/.local/bin/lvim"
+		tmux $CONFIG neww -t editor fish -c "cd $FINAL && source ~/.config/fish/config.fish && $HOME/.local/bin/lvim"
 	else
-		tmux $CONFIG new-session -A -s editor bash -c "cd $FINAL && $HOME/.local/bin/lvim"
+		tmux $CONFIG new-session -A -s editor fish -c "cd $FINAL && source ~/.config/fish/config.fish && $HOME/.local/bin/lvim"
 	fi
 fi

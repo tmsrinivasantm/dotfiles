@@ -40,6 +40,7 @@ if status is-interactive # Commands to run in interactive sessions can go here
 
     fzf --fish | source
     starship init fish | source
+    nvm use latest --silent
 
     function multicd
       echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
