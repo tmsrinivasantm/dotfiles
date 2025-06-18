@@ -7,13 +7,23 @@ FINAL=$(echo "${DIR[@]}" | tr ' ' '\n' | fzf)
 CONFIG="-Leditor -f $HOME/.config/tmux/editor.conf"
 
 if [[ $(ps -aux | grep -c "tmux -Leditor") == "1" ]]; then
-	tmux $CONFIG new-session -s editor fish -c "cd $FINAL && source ~/.config/fish/config.fish && $HOME/.local/bin/lvim"
+	tmux $CONFIG new-session -s editor -c "$FINAL" \; \
+        send-keys "nvm use latest && lvim; tmux kill-pane" C-m \; \
+        split-window -v -c "$FINAL" -l 17 \; \
+        resize-pane -t1 -Z
 else
 	INFO=$(tmux $CONFIG list-session -F "#{session_name}:#{session_attached}")
 	IS_ATTACHED=$(echo "$INFO" | awk -F ':' '{ if ( $1 == "editor" ) print $2 }')
 	if [ "$IS_ATTACHED" == "1" ]; then
-		tmux $CONFIG neww -t editor fish -c "cd $FINAL && source ~/.config/fish/config.fish && $HOME/.local/bin/lvim"
+		tmux $CONFIG neww -t editor -c "$FINAL" \; \
+            send-keys "nvm use latest && lvim; tmux kill-pane" C-m \; \
+            split-window -v -c "$FINAL" -l 17 \; \
+            resize-pane -t1 -Z
 	else
-		tmux $CONFIG new-session -A -s editor fish -c "cd $FINAL && source ~/.config/fish/config.fish && $HOME/.local/bin/lvim"
+		tmux $CONFIG new-session -A -s editor -c "$FINAL" \; \
+            send-keys "nvm use latest && lvim" C-m \; \
+            split-window -v -c "FINAL" -l 17 \; \
+            resize-pane -t1 -Z
 	fi
 fi
+
