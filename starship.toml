@@ -189,6 +189,8 @@ error_symbol = " [×](bold red)"
 symbol = " "
 format = '[\[$symbol$status_common_meaning$status_signal_name$status_maybe_int\]]($style)'
 style = 'bold dimmed purple'
+sigint_symbol=""
+not_executable_symbol=" "
 map_symbol = true
 disabled = false
 
