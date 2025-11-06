@@ -184,6 +184,8 @@ input type:touchpad {
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+grave scratchpad show
+
+    bindsym shift+backspace exec playerctl play-pause
 #
 # Resizing containers:
 #
@@ -225,7 +227,8 @@ bindsym $mod+r mode "resize"
 # Border:
     default_border pixel 2
     default_floating_border pixel 2
-    gaps inner 10
+    gaps inner 5
+    gaps outer 5
     # hide_edge_borders --i3 smart
     smart_borders on
     # smart_gaps on
@@ -256,6 +259,11 @@ bindsym $mod+r mode "resize"
 
 set $wob wob --config ~/.config/sway/wob/wob.ini
 exec_always {
+    systemctl --user import-environment
+    gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+    gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
+    gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
+    gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
     test -e $SWAYSOCK.wob || mkfifo $SWAYSOCK.wob
     tail -f $SWAYSOCK.wob | $wob
     swaync --style $HOME/.config/swaync/style.css --config $HOME/.config/swaync/config.json
