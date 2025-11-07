@@ -186,6 +186,7 @@ input type:touchpad {
     bindsym $mod+grave scratchpad show
 
     bindsym shift+backspace exec playerctl play-pause
+    bindsym --no-warn XF86AudioPlay exec playerctl play-pause
 #
 # Resizing containers:
 #
