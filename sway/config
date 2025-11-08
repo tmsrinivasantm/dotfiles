@@ -223,7 +223,9 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%- && ( echo $((`brightnessctl get` * 100 / `brightnessctl m`)) > $SWAYSOCK.wob )
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+ && ( echo $((`brightnessctl get` * 100 / `brightnessctl m`)) > $SWAYSOCK.wob )
     # Special key to take a screenshot with grim
-    bindsym Print exec grim -g "$(slurp)" - | wl-copy
+    bindsym Print exec grim -g "$(slurp)" - | wl-copy && bash $HOME/.config/sway/scripts/screenshot-notify.sh
+    bindsym Ctrl+Print exec grim - | wl-copy && bash $HOME/.config/sway/scripts/screenshot-notify.sh --fullscreen
+    # bindsym Alt+Print exec grim -g "$(slurp)" - | wl-copy
 
 # Border:
     default_border pixel 2
