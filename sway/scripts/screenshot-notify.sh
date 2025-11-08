@@ -3,5 +3,5 @@ if [ $1 == "--fullscreen" ]; then
     BODY="FullScreen Captured"
 fi
 wl-paste > /tmp/tempimg.png
-notify-send -t 2000 -i /tmp/tempimg.png "Screenshot" "$BODY"
+notify-send -t 2000 -i /tmp/tempimg.png "Screenshot" "$BODY" --app-name Screenshot
 rm /tmp/tempimg.png
