@@ -1,16 +1,18 @@
 * {
     border:        none;
-    border-radius: 0;
+    border-radius: 30;
     font-family:   "JetBrains Mono NerdFont", "FontAwesome 6 Free";
-    font-size:     14px;
+    font-size:     13px;
     box-shadow:    none;
     text-shadow:   none;
     transition-duration: 0s;
+    margin-left: 3;
+    margin-right: 3;
 }
 
 window#waybar {
     color: rgba(53, 185, 171, 1);
-    background-color: rgba(10, 10, 10, 0.4);
+    background-color: rgba(10, 10, 10, 0.9);
     border-bottom: 1px solid rgba(53, 185, 171, 0.4);
 }
 
