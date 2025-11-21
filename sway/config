@@ -19,7 +19,7 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 set $term bash -c 'if [ $(swaymsg -t get_workspaces | jq -r ".[] | select(.focused).name") == "3" ]; then foot -e /home/srinivasan/.local/bin/termtmux; else foot; fi'
-
+focus_wrapping no
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
