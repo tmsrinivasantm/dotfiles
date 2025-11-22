@@ -79,7 +79,7 @@ input type:touchpad {
     bindsym $mod+n exec foot --config ~/.config/foot/editor.ini ~/.local/bin/open-tmux-editor
 
     # browser
-    bindsym $mod+f exec /opt/zen/zen
+    bindsym $mod+f exec brave-browser --enable-features=TouchpadOverscrollHistoryNavigation,UseOzonePlaform --ozone-platform-hint=wayland
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -117,9 +117,11 @@ input type:touchpad {
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
+    bindsym $mod+period focus mode_toggle
 #
 # Workspaces:
 #
+    workspace 1; layout stacking;
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
@@ -235,7 +237,8 @@ bindsym $mod+r mode "resize"
     smart_borders on
     # smart_gaps on
     titlebar_border_thickness 0
-    client.focused #ff0000 #5391f5 #ffffff #5391f5
+    titlebar_padding 0
+    client.focused #ff0000 #5391f5 #000000 #000000
 #
 # Status Bar:
 #
