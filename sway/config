@@ -23,7 +23,7 @@ focus_wrapping no
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/srinivasan/Pictures/wallpapers/Frosted-Glass/cloudy_crescent.png fill
+output * bg /home/srinivasan/Pictures/wallpapers/wallpaper.jpg fill
 output * adaptive_sync on
 #
 # Example configuration:
