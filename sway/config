@@ -18,7 +18,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term bash -c 'if [ $(swaymsg -t get_workspaces | jq -r ".[] | select(.focused).name") == "3" ]; then foot -e /home/srinivasan/.local/bin/termtmux; else foot; fi'
+set $term foot --title terminal -e 'tmux'
 focus_wrapping no
 ### Output configuration
 #
@@ -65,6 +65,7 @@ input type:touchpad {
 #
     # Start a terminal
     bindsym $mod+Return exec $term
+    bindsym $mod+a focus parent
 
     # close focused window
     bindsym Ctrl+q kill
@@ -76,7 +77,7 @@ input type:touchpad {
     bindsym $mod+backspace exec swaylock -c 000000
 
     # Editor
-    bindsym $mod+n exec foot --config ~/.config/foot/editor.ini ~/.local/bin/open-tmux-editor
+    bindsym $mod+n exec foot --title terminal --config ~/.config/foot/editor.ini ~/.local/bin/open-tmux-editor
 
     # browser
     bindsym $mod+f exec brave-browser --enable-features=TouchpadOverscrollHistoryNavigation,UseOzonePlaform --ozone-platform-hint=wayland
@@ -121,7 +122,7 @@ input type:touchpad {
 #
 # Workspaces:
 #
-    workspace 1; layout stacking;
+    workspace_layout tabbed
     # Switch to workspace
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
@@ -237,8 +238,7 @@ bindsym $mod+r mode "resize"
     smart_borders on
     # smart_gaps on
     titlebar_border_thickness 0
-    titlebar_padding 0
-    client.focused #ff0000 #5391f5 #000000 #000000
+    # client.focused #ff0000 #5391f5 #000000 #000000
 #
 # Status Bar:
 #
