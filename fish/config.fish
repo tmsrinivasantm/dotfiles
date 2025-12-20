@@ -13,8 +13,6 @@ if status is-interactive # Commands to run in interactive sessions can go here
     	alias logout "bspc quit"
     else if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]
     	alias logout "qdbus org.kde.ksmserver /KSMServer logout 0 0 0"
-    	alias poweroff="systemctl poweroff"
-    	alias reboot "systemctl reboot"
     else if [ $XDG_CURRENT_DESKTOP = "QTILE" ]
     	alias logout "qtile cmd-obj -o cmd -f shutdown"
     else if [ $XDG_CURRENT_DESKTOP = "sway:wlroots" ]
@@ -26,6 +24,8 @@ if status is-interactive # Commands to run in interactive sessions can go here
     end
 
 
+    alias poweroff="systemctl poweroff"
+    alias reboot "systemctl reboot"
     alias vim lvim 
     alias nvim lvim
     alias ssh 'TERM=tmux-256color command ssh'
