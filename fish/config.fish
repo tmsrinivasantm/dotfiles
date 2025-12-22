@@ -15,7 +15,7 @@ if status is-interactive # Commands to run in interactive sessions can go here
     	alias logout "qdbus org.kde.ksmserver /KSMServer logout 0 0 0"
     else if [ $XDG_CURRENT_DESKTOP = "QTILE" ]
     	alias logout "qtile cmd-obj -o cmd -f shutdown"
-    else if [ $XDG_CURRENT_DESKTOP = "sway:wlroots" ]
+    else if [ $XDG_CURRENT_DESKTOP = "sway" ]
     	alias logout "sway exit"
     else if [ $XDG_CURRENT_DESKTOP = "GNOME" ]
     	alias logout "gnome-session-quit --no-prompt --logout"
