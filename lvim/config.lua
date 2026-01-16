@@ -5,6 +5,12 @@
 
 lvim.plugins = { {
     'tpope/vim-fugitive' },
+    {
+        'akinsho/flutter-tools.nvim',
+        dependencies = {
+            "nvim-lua/plenary.nvim"
+        }
+    },
     -- {
     --     "catppuccin/nvim",
     --     name = "catppuccin",

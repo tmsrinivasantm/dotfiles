@@ -1,5 +1,5 @@
 if status is-interactive # Commands to run in interactive sessions can go here
-    set -x PATH $HOME/.local/bin:$PATH 
+    set -x PATH $HOME/.local/bin:/opt/flutter/bin:$PATH 
     set -x CC "/usr/bin/clang"
     set -x CXX "/usr/bin/clang++"
     set -x CMAKE_EXPORT_COMPILE_COMMANDS "ON"
