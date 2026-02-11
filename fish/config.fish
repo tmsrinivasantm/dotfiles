@@ -43,6 +43,9 @@ if status is-interactive # Commands to run in interactive sessions can go here
     nvm use latest --silent
     source "$HOME/.cargo/env.fish"
 
+    # alt + backspace inside double quotes does not remove opening double quotes
+    bind \e\x7f backward-kill-word
+
     function multicd
       echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
     end
