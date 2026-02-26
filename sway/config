@@ -176,7 +176,6 @@ input type:touchpad {
     # Swap focus between the tiling area and the floating area
 
     # Move focus to the parent container
-    bindsym $mod+a focus parent
 #
 # Scratchpad:
 #
