@@ -39,6 +39,7 @@ if status is-interactive # Commands to run in interactive sessions can go here
     alias neofetch 'fastfetch'
 
     fzf --fish | source
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
     starship init fish | source
     nvm use latest --silent
     source "$HOME/.cargo/env.fish"
