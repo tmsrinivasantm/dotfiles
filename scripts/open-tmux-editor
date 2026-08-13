@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 DIR=()
-DIR+=($(find "$HOME" -maxdepth 2 -type d -print))
-DIR+=($(find "$HOME/Stash/github" -maxdepth 1 -type d -print))
-FINAL=$(echo "${DIR[@]}" | tr ' ' '\n' | fzf)
+while IFS= read -r line; do DIR+=("$line"); done < <(find "$HOME" -maxdepth 2 -type d)
+while IFS= read -r line; do DIR+=("$line"); done < <(find "$HOME/Stash/github" -maxdepth 1 -type d)
+FINAL=$(printf '%s\n' "${DIR[@]}" | fzf)
 CONFIG="-Leditor -f $HOME/.config/tmux/editor.conf"
 
 if [[ $(ps -aux | grep -c "tmux -Leditor") == "1" ]]; then
