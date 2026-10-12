@@ -38,8 +38,8 @@ show_cheatsheet = false
 # `umbriel outputs`.
 # https://docs.noctalia.dev/umbriel/configuration/#events
 [events]
-lid_close = "umbriel msg output-disable:eDP-1 && loginctl lock-session"
-lid_open = "umbriel msg output-enable:eDP-1"
+lid_close = "umbriel msg dpms-off:eDP-1 && loginctl lock-session"
+lid_open = "umbriel msg dpms-on:eDP-1"
 
 # ==============================================================================
 # Screencast
@@ -138,7 +138,7 @@ natural_scroll = true
 "XF86AudioLowerVolume" =  "spawn:noctalia msg volume-down"
 "Ctrl+Q" = { action = "window-close", repeat = false }
 "Mod+Escape" = "session-quit"
-"Mod+BackSpace" = "spawn:loginctl lock-session"
+"Mod+BackSpace" = "spawn:noctalia msg session lock-and-suspend"
 "Mod+Shift+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
 "Alt+Tab" = { action = "spawn:noctalia msg window-switcher hold"}
 
