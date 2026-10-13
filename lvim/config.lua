@@ -129,7 +129,7 @@ lvim.builtin.telescope.defaults = {
 lvim.builtin.indentlines.options.show_current_context = false;
 lvim.builtin.which_key.mappings['w'] = {}
 lvim.transparent_window = true;
-lvim.colorscheme = 'catppuccin'
+lvim.colorscheme = 'rose-pine-main'
 
 -- c to blackhole
 lvim.keys.normal_mode['c'] = '"_c'
