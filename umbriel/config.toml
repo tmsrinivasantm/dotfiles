@@ -38,7 +38,7 @@ show_cheatsheet = false
 # `umbriel outputs`.
 # https://docs.noctalia.dev/umbriel/configuration/#events
 [events]
-lid_close = "umbriel msg dpms-off:eDP-1 && loginctl lock-session"
+lid_close = "umbriel msg dpms-off:eDP-1 && noctalia msg session lock"
 lid_open = "umbriel msg dpms-on:eDP-1"
 
 # ==============================================================================
@@ -141,7 +141,7 @@ natural_scroll = true
 "XF86AudioLowerVolume" =  "spawn:noctalia msg volume-down"
 "Ctrl+Q" = { action = "window-close", repeat = false }
 "Mod+Escape" = "session-quit"
-"Mod+BackSpace" = "spawn:noctalia msg session lock-and-suspend"
+"Mod+BackSpace" = "spawn:noctalia msg session lock && umbriel msg dpms-off:eDP-1"
 "Mod+Shift+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
 "Alt+Tab" = { action = "spawn:noctalia msg window-switcher hold"}
 
@@ -155,18 +155,18 @@ natural_scroll = true
 "Mod+K" = "window-focus-up"
 "Mod+L" = "window-focus-right"
 "Mod+F1" = "window-focus-next"
-"Mod+Shift+Left" = "column-move-left"
+"Mod+Shift+H" = "column-move-left"
 "Mod+Shift+Down" = "window-move-down"
 "Mod+Shift+Up" = "window-move-up"
-"Mod+Shift+Right" = "column-move-right"
+"Mod+Shift+L" = "column-move-right"
 
 # Window state and layout
 "Mod+T" = { action = "window-toggle-floating", repeat = false }
 "Mod+Shift+T" = { action = "window-focus-switch-floating", repeat = false }
 "Mod+P" = { action = "spawn:playerctl play-pause", repeat = false }
-"Mod+Tab" = { action = "window-toggle-maximize-to-edges", repeat = false }
+"Mod+Tab" = { action = "window-toggle-fullscreen", repeat = false }
 "Mod+F" = { action = "spawn:brave-browser", repeat = false }
-"Mod+Ctrl+F" = { action = "window-toggle-maximize", repeat = false }
+"Mod+M" = { action = "window-toggle-maximize", repeat = false }
 "Mod+R" = "window-cycle-primary-extent"
 "Mod+Shift+R" = "window-cycle-primary-extent-back"
 "Mod+Comma" = "window-consume-left"
@@ -246,7 +246,6 @@ default_extent_fraction = 0.5
 [[window_rule]]
 match.is_floating = false
 blur = true
-blur_optimized = false
 default_maximize = true
 border_color_focused = "#535963"
 
