@@ -139,6 +139,8 @@ natural_scroll = true
 "Shift+Super+F23" = "spawn:noctalia msg screenshot-region" # screenshot on copilot button
 "XF86AudioRaiseVolume" = "spawn:noctalia msg volume-up"
 "XF86AudioLowerVolume" =  "spawn:noctalia msg volume-down"
+"XF86MonBrightnessUp" = "spawn:noctalia msg brightness-up"
+"XF86MonBrightnessDown" = "spawn:noctalia msg brightness-down"
 "Ctrl+Q" = { action = "window-close", repeat = false }
 "Mod+Escape" = "session-quit"
 "Mod+BackSpace" = "spawn:noctalia msg session lock && umbriel msg dpms-off:eDP-1"
