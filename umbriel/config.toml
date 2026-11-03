@@ -24,7 +24,7 @@ files = []
 # Optional session examples. XWayland support is enabled by default.
 # https://docs.noctalia.dev/umbriel/configuration/#general
 [general]
-autostart = ["noctalia", "spawn:bash -c \"alacritty --socket /tmp/alacritty.sock --daemon\"", "spawn:bash -c \"alacritty --socket /tmp/editor.sock --config-file ~/.config/alacritty/editor.toml --daemon\""]
+autostart = ["noctalia", "spawn bash -c \"alacritty --socket /tmp/alacritty.sock --daemon\"", "spawn bash -c \"alacritty --socket /tmp/editor.sock --config-file ~/.config/alacritty/editor.toml --daemon\""]
 show_cheatsheet = false
 # xwayland = false
 # Sharp X11 apps and games on scaled outputs; they see physical resolutions.
@@ -133,19 +133,19 @@ natural_scroll = true
 [keybinds]
 
 # Applications and session
-"Mod+Return" = { action = "spawn:bash -c 'if [ \"$(umbriel workspaces --json | jq .[2].focused)\" == \"true\" ]; then alacritty -e termtmux; else alacritty -e tmux; fi'", repeat = false }
-"Mod+N" = { action = "spawn:alacritty -e 'open-tmux-editor'", repeat = false }
-"Mod" = "spawn:noctalia msg panel-toggle launcher"
-"Shift+Super+F23" = "spawn:noctalia msg screenshot-region" # screenshot on copilot button
-"XF86AudioRaiseVolume" = "spawn:noctalia msg volume-up"
-"XF86AudioLowerVolume" =  "spawn:noctalia msg volume-down"
-"XF86MonBrightnessUp" = "spawn:noctalia msg brightness-up"
-"XF86MonBrightnessDown" = "spawn:noctalia msg brightness-down"
+"Mod+Return" = { action = "spawn bash -c 'if [ \"$(umbriel workspaces --json | jq .[2].focused)\" == \"true\" ]; then alacritty -e termtmux; else alacritty -e tmux; fi'", repeat = false }
+"Mod+N" = { action = "spawn alacritty -e 'open-tmux-editor'", repeat = false }
+"Mod" = "spawn noctalia msg panel-toggle launcher"
+"Shift+Super+F23" = "spawn noctalia msg screenshot-region" # screenshot on copilot button
+"XF86AudioRaiseVolume" = "spawn noctalia msg volume-up"
+"XF86AudioLowerVolume" =  "spawn noctalia msg volume-down"
+"XF86MonBrightnessUp" = "spawn noctalia msg brightness-up"
+"XF86MonBrightnessDown" = "spawn noctalia msg brightness-down"
 "Ctrl+Q" = { action = "window-close", repeat = false }
 "Mod+Escape" = "session-quit"
-"Mod+BackSpace" = "spawn:noctalia msg session lock && umbriel msg dpms-off:eDP-1"
+"Mod+BackSpace" = "spawn noctalia msg session lock && umbriel msg dpms-off:eDP-1"
 "Mod+Shift+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }
-"Alt+Tab" = { action = "spawn:noctalia msg window-switcher hold"}
+"Alt+Tab" = { action = "spawn noctalia msg window-switcher hold"}
 
 # Focus and movement
 "Mod+Left" = "window-focus-left"
@@ -165,9 +165,9 @@ natural_scroll = true
 # Window state and layout
 "Mod+T" = { action = "window-toggle-floating", repeat = false }
 "Mod+Shift+T" = { action = "window-focus-switch-floating", repeat = false }
-"Mod+P" = { action = "spawn:playerctl play-pause", repeat = false }
+"Mod+P" = { action = "spawn playerctl play-pause", repeat = false }
 "Mod+Tab" = { action = "window-toggle-fullscreen", repeat = false }
-"Mod+F" = { action = "spawn:brave-browser", repeat = false }
+"Mod+F" = { action = "spawn brave-browser", repeat = false }
 "Mod+M" = { action = "window-toggle-maximize", repeat = false }
 "Mod+R" = "window-cycle-primary-extent"
 "Mod+Shift+R" = "window-cycle-primary-extent-back"
@@ -181,24 +181,24 @@ natural_scroll = true
 "Mod+O" = { action = "overview-toggle", repeat = false }
 
 # Workspaces
-"Mod+1" = "workspace-switch:1"
-"Mod+2" = "workspace-switch:2"
-"Mod+3" = "workspace-switch:3"
-"Mod+4" = "workspace-switch:4"
-"Mod+5" = "workspace-switch:5"
-"Mod+6" = "workspace-switch:6"
-"Mod+7" = "workspace-switch:7"
-"Mod+8" = "workspace-switch:8"
-"Mod+9" = "workspace-switch:9"
-"Mod+Shift+1" = "window-move-to-workspace:1"
-"Mod+Shift+2" = "window-move-to-workspace:2"
-"Mod+Shift+3" = "window-move-to-workspace:3"
-"Mod+Shift+4" = "window-move-to-workspace:4"
-"Mod+Shift+5" = "window-move-to-workspace:5"
-"Mod+Shift+6" = "window-move-to-workspace:6"
-"Mod+Shift+7" = "window-move-to-workspace:7"
-"Mod+Shift+8" = "window-move-to-workspace:8"
-"Mod+Shift+9" = "window-move-to-workspace:9"
+"Mod+1" = "workspace-switch 1"
+"Mod+2" = "workspace-switch 2"
+"Mod+3" = "workspace-switch 3"
+"Mod+4" = "workspace-switch 4"
+"Mod+5" = "workspace-switch 5"
+"Mod+6" = "workspace-switch 6"
+"Mod+7" = "workspace-switch 7"
+"Mod+8" = "workspace-switch 8"
+"Mod+9" = "workspace-switch 9"
+"Mod+Shift+1" = "window-move-to-workspace 1"
+"Mod+Shift+2" = "window-move-to-workspace 2"
+"Mod+Shift+3" = "window-move-to-workspace 3"
+"Mod+Shift+4" = "window-move-to-workspace 4"
+"Mod+Shift+5" = "window-move-to-workspace 5"
+"Mod+Shift+6" = "window-move-to-workspace 6"
+"Mod+Shift+7" = "window-move-to-workspace 7"
+"Mod+Shift+8" = "window-move-to-workspace 8"
+"Mod+Shift+9" = "window-move-to-workspace 9"
 
 # Scratchpad
 "Mod+Shift+Space" = { action = "window-move-to-scratchpad", repeat = false }
