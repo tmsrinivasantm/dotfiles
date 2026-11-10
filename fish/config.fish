@@ -20,6 +20,8 @@ if status is-interactive # Commands to run in interactive sessions can go here
     	alias logout "sway exit"
     else if [ $XDG_CURRENT_DESKTOP = "GNOME" ]
     	alias logout "gnome-session-quit --no-prompt --logout"
+    else if [ $XDG_CURRENT_DESKTOP = "umbriel" ]
+    	alias logout "umbriel msg session-quit skip-confirmation"
     else if [ $XDG_SESSION_TYPE = "wayland" ]
     	alias logout "hyprctl dispatch exit"
     end

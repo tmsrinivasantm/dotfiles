@@ -133,8 +133,8 @@ natural_scroll = true
 [keybinds]
 
 # Applications and session
-"Mod+Return" = { action = "spawn bash -c 'if [ \"$(umbriel workspaces --json | jq .[2].focused)\" == \"true\" ]; then alacritty -e termtmux; else alacritty -e tmux; fi'", repeat = false }
-"Mod+N" = { action = "spawn alacritty -e 'open-tmux-editor'", repeat = false }
+"Mod+Return" = { action = "spawn bash -c 'if [ \"$(umbriel workspaces --json | jq .[2].focused)\" == \"true\" ]; then alacritty --class termtmux -e termtmux; else alacritty -e tmux; fi'", repeat = false }
+"Mod+N" = { action = "spawn alacritty --class editor -e 'open-tmux-editor'", repeat = false }
 "Mod" = "spawn noctalia msg panel-toggle launcher"
 "Shift+Super+F23" = "spawn noctalia msg screenshot-region" # screenshot on copilot button
 "XF86AudioRaiseVolume" = "spawn noctalia msg volume-up"
@@ -157,10 +157,10 @@ natural_scroll = true
 "Mod+K" = "window-focus-up"
 "Mod+L" = "window-focus-right"
 "Mod+F1" = "window-focus-next"
-"Mod+Shift+H" = "column-move-left"
-"Mod+Shift+Down" = "window-move-down"
-"Mod+Shift+Up" = "window-move-up"
-"Mod+Shift+L" = "column-move-right"
+"Mod+Shift+J" = "window-swap-down"
+"Mod+Shift+K" = "window-swap-up"
+"Mod+Shift+H" = "window-swap-left"
+"Mod+Shift+L" = "window-swap-right"
 
 # Window state and layout
 "Mod+T" = { action = "window-toggle-floating", repeat = false }
@@ -246,9 +246,16 @@ default_extent_fraction = 0.5
 # overlapping windows behind them.
 
 [[window_rule]]
+match.app_id = "^termtmux$|^editor$|^brave-browser$"
 match.is_floating = false
 blur = true
 default_maximize = true
+border_color_focused = "#535963"
+
+[[window_rule]]
+match.is_floating = false
+blur = true
+# default_maximize = true
 border_color_focused = "#535963"
 
 # [[window_rule]]
